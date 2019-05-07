@@ -1,0 +1,80 @@
+.site-header {
+    .container {
+        position: relative;
+    }
+    &--seethrough {
+        opacity: 0.85;
+    }
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 4rem;
+    z-index: 1000;
+    background-color: $color-white;
+    color: $secondary-text-color;
+    &__caption{
+        position: absolute;
+        left: 0;
+        line-height: 4rem;
+        font-family: $logo-font;
+        font-size: 2rem;
+        &--sub {
+            font-family: $logo-font;
+            font-size: 1.4rem;
+            font-weight: bolder;
+            color: $disabled-text-color;
+            letter-spacing: 0.2rem;
+        }
+    }
+    &__branding {
+        position: absolute;
+        right: 0;
+        width: 10rem;
+        height: 10rem;
+        // border-radius: 10rem;
+        border-bottom-left-radius: 10rem;
+        border-bottom-right-radius: 10rem;
+        background-color: $color-white;
+        &--mask {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: calc(100% + 2rem);
+            height: 4rem;
+            margin-left: -1rem;
+            margin-right: 1rem;
+            background-color: $color-white;
+        }
+        &__image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: auto;
+            width: 100%;
+            padding: 0.5rem;
+            img {
+                width: 100%;
+                border-radius: 8rem;
+                box-shadow: inset 0 2px 4px rgba(0,0,0,0.33);
+                background-color: $primary-background-color;
+            }
+        }
+    }
+    &__hamburger-wrapper {
+        position: absolute;
+        top: 2rem;
+        transform: translateY(-50%);
+        right: 10rem;
+        z-index: 3;
+    }
+    &--is-expanded {
+        background-color: rgba($primary-background-color, 0.8);
+        backdrop-filter: blur(3px);
+        &.site-header--transparent {
+            background-color: rgba($secondary-background-color, 0.85);
+        }
+        .site-header__menu-icon__wrapper {
+            background-color: transparent;
+        }
+    }
+}

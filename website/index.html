@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>Attila Hazay's resume</title>
+      <meta name="description" content="Online resume of Attila Hazay - the front-end developer and UX designer.">
+      <meta name="author" content="">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="icon" href="AH_favicon.ico">
+
+      <!-- build:css ./assets/styles/sitestyles.css -->
+      <link href="temp/styles/sitestyles.css" rel="stylesheet">
+      <!-- endbuild -->
+      <!-- build:js ./assets/js/vendor.js -->
+      <script src="temp/js/Vendor.js" type="text/javascript"></script>
+      <!-- endbuild -->
+</head>
+
+<body>
+      <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+      <![endif]-->
+
+      <header id="site-header" class="site-header shadow-depth3">
+            <div class="container">
+                  <div class="site-header__caption">
+                        Attila Hazay <span class="site-header__caption--sub">resume</span>
+                  </div>
+                  <div class="site-header__branding shadow-depth3">
+                        <div class="site-header__branding--mask"></div> 
+                        <div class="site-header__branding__image">
+                              <img src="./assets/images/AH_portrait_white.png"
+                                    class="" alt="AH portrait image">
+                        </div>
+                        
+                  </div>
+                  <div class="site-header__hamburger-wrapper">
+                        <button class="hamburger__wrapper">
+                              <div class="hamburger__menu-icon">
+                                    <div class="hamburger__menu-icon__middle"></div>
+                              </div>
+                        </button>
+                  </div>
+            </div>
+      </header>
+
+      <nav class="primary-nav site-header__nav-wrapper collapse" id="menuContent">
+            <ul class="primary-nav__items-wrapper">
+                  <li class="primary-nav__item">
+                        <a data-filter="profile" class="primary-nav__link primary-nav__link--active"
+                              data-lang="nav-menu-about" href="#">profile</a>
+                  </li>
+                  <li class="primary-nav__item">
+                        <a data-filter="experience" class="primary-nav__link" data-lang="nav-menu-daily"
+                              href="#">experience</a>
+                  </li>
+                  <li class="primary-nav__item">
+                        <a data-filter="skills" class="primary-nav__link" data-lang="nav-menu-menu"
+                              href="#">skills</a>
+                  </li>
+                  <li class="primary-nav__item">
+                        <a data-filter="projects" class="primary-nav__link" data-lang="nav-menu-reservations"
+                              href="#">projects</a>
+                  </li>
+                  <li class="primary-nav__item">
+                        <a data-filter="profile" class="primary-nav__link" data-lang="nav-menu-contact"
+                              href="#">profile</a>
+                  </li>
+            </ul>
+      </nav>
+
+      <section class="section-hero">
+
+            <div id="mainHeroCarousel" class="carousel carousel-hero slide">
+                  <div class="carousel-inner carousel-hero__carousel-inner">
+                        <div class="carousel-item carousel-hero__carousel-item active">
+                              <picture>
+                                    <source srcset="./assets/images/coding.jpeg" media="(min-width:2048px)">
+                                    <source srcset="./assets/images/coding.jpeg" media="(min-width:820px)">
+                                    <img src="./assets/images/coding.jpeg"
+                                          class="carousel-hero__carousel-item__img carousel-hero__carousel-item__img--bw"
+                                          alt="AH resume hero image">
+                                    <div class="carousel-hero__carousel-item__img__overlay"></div>
+                              </picture>
+                              <div class="carousel-caption carousel-hero__caption d-none d-md-block">
+                                    <h4>Front-end developer</h4>
+                                    <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                              </div>
+                        </div>
+                        <div class="carousel-item carousel-hero__carousel-item">
+                              <picture>
+                                    <source srcset="./assets/images/uxdesign.jpg" media="(min-width:2048px)">
+                                    <source srcset="./assets/images/uxdesign.jpg" media="(min-width:820px)">
+                                    <img src="./assets/images/uxdesign.jpg"
+                                          class="carousel-hero__carousel-item__img carousel-hero__carousel-item__img--bw"
+                                          alt="AH resume hero image">
+                                    <div class="carousel-hero__carousel-item__img__overlay"></div>
+                              </picture>
+                              <div class="carousel-caption carousel-hero__caption d-none d-md-block">
+                                    <h4>UX designer</h4>
+                                    <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur</p>
+                              </div>
+                        </div>
+                  </div>
+
+                  <a class="carousel-control-prev carousel-hero__control-prev" href="#mainHeroCarousel" role="button"
+                        data-slide="prev">
+                        <span class="carousel-hero__control-prev__icon" aria-hidden="true">
+                              <i class="fas fa-chevron-circle-left"></i>
+                        </span>
+                        <span class="sr-only">Previous</span>
+                  </a>
+                  <a class="carousel-control-next carousel-hero__control-next" href="#mainHeroCarousel" role="button"
+                        data-slide="next">
+                        <span class="carousel-hero__control-next__icon" aria-hidden="true">
+                              <i class="fas fa-chevron-circle-right"></i>
+                        </span>
+                        <span class="sr-only">Next</span>
+                  </a>
+
+            </div>
+
+            <!-- <div class="section-hero__overlay gradient--yelloworange gradient--multiply layer__opacity-60"></div>
+            <div class="section-hero__overlay section-hero__overlay--Z2 section-hero__overlay--dark50 layer-opacity-60"></div> -->
+
+            
+            <div class="section-hero__wrapper">
+                  <div class="container">
+                        <div class="section-hero__logocontainer">
+                              <img class="section-hero__logo" src="./assets/images/ah_signature_white.png" alt="AH logo">
+                        </div>
+                        <h1 class="section-hero__title">&horbar;interactive&horbar;resume&horbar;</h1>
+                        <div class="section-hero__avatar">
+                              <img src="./assets/images/AH_portrait_white.png" alt="AH portrait image">
+                        </div>
+                  </div>
+            </div>
+
+      </section>
+
+      <section class="section section-profile">
+            <div class="container">
+                  <h2 class = "section__title text-gradient--darkergreydarkgrey">profile</h2>
+                  <div class="feature">
+                        <h3 class="feature__title">summary</h3>
+                        <h4 class="feature__subtitle">
+                              <i class="fas fa-chevron-right"></i>&nbsp;Front-end developer</h4>
+                        <p class="feature__header">A full stack front-end developer, focusing on expanding knowledge beyond the ground-setting web trinity of HTML, CSS and Javascript - into frameworks and libraries like Less/Sass,Bootstrap and Angular JS.</p>
+                        <h4 class="feature__subtitle">
+                              <i class="fas fa-chevron-right"></i>&nbsp;UX designer</h4>
+                        <p class="feature__text">Developing fully clickable mockups in Axure RP 8 for a cloud poject in industrial automation field. Full stack graphics designer using Adobe suite.</p>
+                  </div>
+                  <div class="feature">
+                        <h3 class="feature__title">professional experience</h3>
+                        <div class="row">
+                              <div class="col-12 col-sm-3">
+                                    <h4 class="feature__subtitle">01/2016-now</h4>
+                              </div>
+                              <div class="col-12 col-sm-9">
+                                    <h4 class="feature__subtitle">Rockwell Automation</h4>
+                                    <p class="feature__text feature__text--lead">Frint-end software engineer and UX designer.</p>
+                                    <p class="feature__text">Taking part in development of cloud solution within industrial automation field.
+                                          Final state exam in the History of Photography.
+                                          Final thesis: Use of historical photographic techniques in contemporary Czech Photography.</p>
+                              </div>
+                        </div>
+                  </div>
+                  <div class="feature">
+                        <h3 class="feature__title">education</h3>
+                        <div class="row">
+                              <div class="col-12 col-sm-3">
+                                    <h4 class="feature__subtitle">2008-2013</h4>
+                              </div>
+                              <div class="col-12 col-sm-9">
+                                    <h4 class="feature__subtitle">Silesian University, Opava, Czech Republic. Institute of Creative Photography</h4>
+                                    <p class="feature__text">Bachelor’s degree in Photography.
+                                          Final state exam in the History of Photography.
+                                          Final thesis: Use of historical photographic techniques in contemporary Czech Photography.</p>
+                              </div>
+                        </div>
+                        <div class="row">
+                              <div class="col-12 col-sm-3">
+                                    <h4 class="feature__subtitle">1995-2001</h4>
+                              </div>
+                              <div class="col-12 col-sm-9">
+                                    <h4 class="feature__subtitle">Comenius University, Bratislava, Slovakia. College of Management</h4>
+                                    <p class="feature__text">Master of Business Administration and Economics.
+                                          Final state exam in Economics and Marketing.
+                                          Final thesis: Use of public relations as means of communication in pharmaceutical industry.</p>
+                              </div>
+                        </div>
+                  </div>
+                  <div class="row">
+                        <div class="col-12 col-md-6">
+                              <div class="feature">
+                                    <h3 class="feature__title">language skills</h3>
+                                    <div class="progress">
+                                          <div class="progress__text">Slovak / native</div>
+                                          <div class="progress__status progress__status--100 gradient--yelloworange"></div>
+                                          <div class="progress__bg"></div>
+                                    </div>
+                                    <div class="progress">
+                                          <div class="progress__text">English / fluent</div>
+                                          <div class="progress__status progress__status--90 gradient--yelloworange"></div>
+                                          <div class="progress__bg"></div>
+                                    </div>
+                                    <div class="progress">
+                                          <div class="progress__text">Czech / fluent</div>
+                                          <div class="progress__status progress__status--90 gradient--yelloworange"></div>
+                                          <div class="progress__bg"></div>
+                                    </div>
+                                    <div class="progress">
+                                          <div class="progress__text">Spanish / intermediate</div>
+                                          <div class="progress__status progress__status--60 gradient--yelloworange"></div>
+                                          <div class="progress__bg"></div>
+                                    </div>
+                              </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                              <div class="feature">
+                                    <h3 class="feature__title">contact</h3>
+                                    <h4 class="feature__subtitle">
+                                          <a class = "feature__link">
+                                                <i class="fas fa-mobile-alt"></i>&nbsp;+(420) - 608 975 292
+                                          </a>
+                                    </h4>
+                                    <h4 class="feature__subtitle">
+                                          <a class = "feature__link" href="https://www.linkedin.com/in/attila-h-22309a154" target="_blank">
+                                                <i class="fab fa-linkedin-in"></i>&nbsp;linkedin.com/in/attila-h-22309a154
+                                          </a>
+                                    </h4>
+                                    <h4 class="feature__subtitle">
+                                          <a class = "feature__link" href="https://github.com/GitAttila" target="_blank">
+                                                <i class="fab fa-github"></i>&nbsp;github.com/GitAttila
+                                          </a>
+                                    </h4>
+                                    <h4 class="feature__subtitle">
+                                          <a class = "feature__link" href="http://attilahazay.blogspot.com" target="_blank">
+                                                <i class="fab fa-blogger"></i>&nbsp;attilahazay.blogspot.com
+                                          </a>
+                                    </h4>
+                              </div>
+                        </div>
+                  </div>
+                  
+            </div>
+
+      </section>
+
+      <section class="section section-tech gradient--yelloworange">
+            <div class="tech-stripe">
+                  <div class="container">
+                        <h2 class = "section__title text-center text-sm-left">this site was built with</h2>
+                        <div class="row align-items-center justify-content-around">
+                              <div class="col-12 col-sm-6 col-md-4 col-lg-1">
+                                    <a href="https://www.w3schools.com/html/html5_intro.asp" class ="tech-stripe__item-link" target = "_blank">
+                                          <img class="tech-stripe__item-link__image" src="./assets/images/tech/html5_logo_white.png" alt="HTML5 logo">
+                                    </a>
+                              </div>
+                              <div class="col-12 col-sm-6 col-md-4 col-lg-1">
+                                    <a href="https://getbootstrap.com" class ="tech-stripe__item-link" target = "_blank">
+                                          <img class="tech-stripe__item-link__image" src="./assets/images/tech/bootstrap_logo_white.png" alt="Bootstrap logo">
+                                    </a>
+                              </div>
+                              <div class="col-12 col-sm-6 col-md-4 col-lg-1">
+                                    <a href="https://sass-lang.com" class ="tech-stripe__item-link" target = "_blank">
+                                          <img class="tech-stripe__item-link__image" src="./assets/images/tech/sass_logo_white.png" alt="Saas logo">
+                                    </a>
+                              </div>
+                              <div class="col-12 col-sm-6 col-md-4 col-lg-1">
+                                    <a href="https://gulpjs.com" class ="tech-stripe__item-link" target = "_blank">
+                                          <img class="tech-stripe__item-link__image" src="./assets/images/tech/gulp_logo_white.png" alt="gulp logo">
+                                    </a>
+                              </div>
+                              <div class="col-12 col-sm-6 col-md-4 col-lg-1">
+                                    <a href="https://webpack.js.org" class ="tech-stripe__item-link" target = "_blank">
+                                          <img class="tech-stripe__item-link__image" src="./assets/images/tech/webpack_logo_white.png" alt="Webpack logo">
+                                    </a>
+                              </div>
+                              <div class="col-12 col-sm-6 col-md-4 col-lg-1">
+                                    <a href="https://isotope.metafizzy.co" class ="tech-stripe__item-link" target = "_blank">
+                                          <img class="tech-stripe__item-link__image" src="./assets/images/tech/isotope_white.png" alt="Isotope logo">
+                                    </a>
+                              </div>
+                              <div class="col-12 col-sm-6 col-md-4 col-lg-1">
+                                    <a href="https://babeljs.io" class ="tech-stripe__item-link" target = "_blank">
+                                          <img class="tech-stripe__item-link__image" src="./assets/images/tech/babel_logo_white.png" alt="Babel logo">
+                                    </a>
+                              </div>
+                        </div>
+                  </div>
+            </div>
+      </section>
+
+      <footer class="section site-footer gradient--darkergreydarkgrey">
+            
+            <div class="container">
+                  <div class="site-footer__image-wrapper">
+                        <img class="site-footer__image site-footer__image--opacity33" src="./assets/images/ah_signature_white.png" alt="AH logo">
+                  </div>
+                  <div class="social-links">
+                        <a href="http://www.ahastudio.cz/" class ="social-links__item-link" target = "_blank">
+                              <i class="fas fa-globe-europe"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/attila-h-22309a154/" class ="social-links__item-link" target = "_blank">
+                              <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://github.com/GitAttila" class ="social-links__item-link" target = "_blank">
+                              <i class="fab fa-github"></i>
+                        </a>
+                  </div>
+                  <div class="site-footer__aknowledgements">
+                        <div class="site-footer__aknowledgements__text">
+                              <p>This resume site was built using HTML, SASS, Bootstrap, JQuery, Gulp, WebPack, and Babel.</p>
+                              <!-- <span class="site-footer__aknowledgements__text--divider"> | </span>  -->
+                              <p>Attilas Hazay’s resume. &copy; 2019. All right reserved. </p> 
+                        </div>
+                  </div>    
+            </div>
+      
+      </footer>
+
+
+      <script src="" async defer></script>
+
+      <!-- build:js ./assets/js/app.js -->
+      <script src="temp/js/App.js" type="text/javascript"></script>
+      <!-- endbuild -->
+
+</body>
+
+</html>
