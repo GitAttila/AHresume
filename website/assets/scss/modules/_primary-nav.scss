@@ -40,7 +40,10 @@
         width: 100%;
         text-decoration: none;
         color: $primary-text-color;
+        padding: 0 1rem;
+        border-radius: 2rem;
         transition: 0.3s color ease-in-out, 0.2s background-color ease-in-out, 0.3s border ease-in-out;
+        outline: 0;
         &:hover,
         &:focus {
             color: $highlight-text-color;
@@ -49,9 +52,7 @@
         &--active {
             background-color: $highlight-text-color;
             color: $color-white;
-            padding: 0 1rem;
-            border-radius: 2rem;
-            &:hover {
+            &:hover, &:focus  {
                 color: $color-white;
             }
         }

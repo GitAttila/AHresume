@@ -27,3 +27,18 @@
         padding: 4rem 0;
     }
 }
+
+.section-profile {
+    background-color: $AH-lightgrey;
+}
+.section-skills, .section-projects, .section-contact {
+    height: 60vh;
+    background-color: $secondary-background-color;
+}
+
+.section-projects {
+    background-color: $primary-background-color;
+}
+.section-contact {
+    background-color: $AH-mediumgrey;
+}
