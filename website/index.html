@@ -34,42 +34,41 @@
                               <img src="./assets/images/AH_portrait_white.png"
                                     class="" alt="AH portrait image">
                         </div>
-                        
-                  </div>
-                  <div class="site-header__hamburger-wrapper">
-                        <button class="hamburger__wrapper">
-                              <div class="hamburger__menu-icon">
-                                    <div class="hamburger__menu-icon__middle"></div>
+                        <button class="site-header__hamburger-wrapper" data-toggle="collapse" data-target="#menuContent">
+                              <div class="hamburger__wrapper">
+                                    <div class="hamburger__menu-icon">
+                                          <div class="hamburger__menu-icon__middle"></div>
+                                    </div>
                               </div>
                         </button>
                   </div>
+
+                  <nav class="primary-nav collapse layer__opacity-85" id="menuContent">
+                        <ul class="primary-nav__items-wrapper shadow-depth3">
+                              <li class="primary-nav__item">
+                                    <a data-filter="home" class="primary-nav__link" href="#">
+                                          <i class="fas fa-home"></i>
+                                    </a>
+                              </li>
+                              <li class="primary-nav__item">
+                                    <a data-filter="profile" class="primary-nav__link" href="#">profile</a>
+                              </li>
+                              <li class="primary-nav__item">
+                                    <a data-filter="experience" class="primary-nav__link" href="#">experience</a>
+                              </li>
+                              <li class="primary-nav__item">
+                                    <a data-filter="skills" class="primary-nav__link primary-nav__link--active" href="#">skills</a>
+                              </li>
+                              <li class="primary-nav__item">
+                                    <a data-filter="projects" class="primary-nav__link" href="#">projects</a>
+                              </li>
+                        </ul>
+                  </nav>
+
             </div>
       </header>
 
-      <nav class="primary-nav site-header__nav-wrapper collapse" id="menuContent">
-            <ul class="primary-nav__items-wrapper">
-                  <li class="primary-nav__item">
-                        <a data-filter="profile" class="primary-nav__link primary-nav__link--active"
-                              data-lang="nav-menu-about" href="#">profile</a>
-                  </li>
-                  <li class="primary-nav__item">
-                        <a data-filter="experience" class="primary-nav__link" data-lang="nav-menu-daily"
-                              href="#">experience</a>
-                  </li>
-                  <li class="primary-nav__item">
-                        <a data-filter="skills" class="primary-nav__link" data-lang="nav-menu-menu"
-                              href="#">skills</a>
-                  </li>
-                  <li class="primary-nav__item">
-                        <a data-filter="projects" class="primary-nav__link" data-lang="nav-menu-reservations"
-                              href="#">projects</a>
-                  </li>
-                  <li class="primary-nav__item">
-                        <a data-filter="profile" class="primary-nav__link" data-lang="nav-menu-contact"
-                              href="#">profile</a>
-                  </li>
-            </ul>
-      </nav>
+
 
       <section class="section-hero">
 
@@ -132,7 +131,7 @@
                               <img class="section-hero__logo" src="./assets/images/ah_signature_white.png" alt="AH logo">
                         </div>
                         <h1 class="section-hero__title">&horbar;interactive&horbar;resume&horbar;</h1>
-                        <div class="section-hero__avatar">
+                        <div class="section-hero__avatar d-none d-sm-block">
                               <img src="./assets/images/AH_portrait_white.png" alt="AH portrait image">
                         </div>
                   </div>
@@ -156,7 +155,7 @@
                         <h3 class="feature__title">professional experience</h3>
                         <div class="row">
                               <div class="col-12 col-sm-3">
-                                    <h4 class="feature__subtitle">01/2016-now</h4>
+                                    <h4 class="feature__subtitle">01/2016-present</h4>
                               </div>
                               <div class="col-12 col-sm-9">
                                     <h4 class="feature__subtitle">Rockwell Automation</h4>

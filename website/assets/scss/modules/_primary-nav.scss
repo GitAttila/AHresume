@@ -1,29 +1,45 @@
 .primary-nav {
     position: absolute;
+    width: 100%;
+    top: 4rem;
+    right: 0;
+    z-index: 1000;
+    transition: all 0.5s ease-in-out;
+    .container {
+        position: relative;
+    }    
+    @include atSmall {
+        top: 10rem;
+    }
+    @include atMedium {
+        width: 10rem;
+        top: 10rem;
+    }
     &__items-wrapper {
-        margin: 1rem 0;
-        padding: 0;
+        margin: 1rem;
+        padding: 2rem 1rem;
+        border-radius: 3rem;
         display: flex;
         flex-direction: column;
+        background-color: $color-white;
         @include atMedium {
-            flex-direction: row;
-            .lang-btn-text__short {
-                display: inline-block
-            }
-            .lang-btn-text__full {
-                display: none;
-            }
+            border-radius: 5rem;
         }
     }
     &__item {
         list-style: none;
-        padding-right: 1rem;
-        margin-bottom: 0.5rem;
+        margin: 0;
         text-align: center;
+        width: 100%;
+        @include atMedium {
+            margin: 0.5rem 0;
+        }
     }
     &__link {
+        display: inline-block;
+        width: 100%;
         text-decoration: none;
-        color: $color-white;
+        color: $primary-text-color;
         transition: 0.3s color ease-in-out, 0.2s background-color ease-in-out, 0.3s border ease-in-out;
         &:hover,
         &:focus {
@@ -31,7 +47,13 @@
             text-decoration: none;
         }
         &--active {
-            color: $highlight-text-color;
+            background-color: $highlight-text-color;
+            color: $color-white;
+            padding: 0 1rem;
+            border-radius: 2rem;
+            &:hover {
+                color: $color-white;
+            }
         }
         &--disabled {
             color: $disabled-text-color;

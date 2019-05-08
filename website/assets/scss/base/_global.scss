@@ -48,6 +48,12 @@ input {
 }
 
 .layer {
+    &__opacity-90 {
+        opacity: 0.9;
+    }
+    &__opacity-85 {
+        opacity: 0.85;
+    }
     &__opacity-60 {
         opacity: 0.6;
     }

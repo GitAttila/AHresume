@@ -2,9 +2,6 @@
     .container {
         position: relative;
     }
-    &--seethrough {
-        opacity: 0.85;
-    }
     position: fixed;
     top: 0;
     width: 100%;
@@ -14,27 +11,42 @@
     color: $secondary-text-color;
     &__caption{
         position: absolute;
-        left: 0;
+        left: 1rem;
         line-height: 4rem;
         font-family: $logo-font;
-        font-size: 2rem;
+        font-size: 1.4rem;
+        font-weight: bold;
+        @include atSmall {
+            font-size: 2rem;
+            font-weight: normal;
+        }
         &--sub {
             font-family: $logo-font;
-            font-size: 1.4rem;
-            font-weight: bolder;
+            font-size: 1rem;
+            font-weight: bold;
             color: $disabled-text-color;
             letter-spacing: 0.2rem;
+            @include atSmall {
+                font-size: 1.4rem;
+                font-weight: normal;
+            }
         }
     }
     &__branding {
         position: absolute;
         right: 0;
-        width: 10rem;
-        height: 10rem;
-        // border-radius: 10rem;
-        border-bottom-left-radius: 10rem;
-        border-bottom-right-radius: 10rem;
+        width: 5rem;
+        height: 5rem;
+        border-bottom-left-radius: 5rem;
+        border-bottom-right-radius: 5rem;
         background-color: $color-white;
+        transition: all 0.5s ease-in-out;
+        @include atSmall {
+            width: 10rem;
+            height: 10rem;
+            border-bottom-left-radius: 10rem;
+            border-bottom-right-radius: 10rem;
+        }
         &--mask {
             position: absolute;
             top: 0;
@@ -64,8 +76,14 @@
         position: absolute;
         top: 2rem;
         transform: translateY(-50%);
-        right: 10rem;
+        left: -2.5rem;
         z-index: 3;
+        -webkit-appearance: none;
+        border: none;
+        background-color: transparent;
+        &:focus, &:active {
+            outline: 0;
+        }
     }
     &--is-expanded {
         background-color: rgba($primary-background-color, 0.8);
