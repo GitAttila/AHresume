@@ -45,18 +45,20 @@ var paths = {
     }
 };
 
-function serve() {
-    return server.init({
+function serve(done) {
+    server.init({
         server: {
             baseDir: "./website"
         },
         port: 3000,
         notify: false
     });
+    done();
 }
 
-function reload() {
+function reload(done) {
     server.reload();
+    done();
 }
 
 function clean() {
@@ -143,18 +145,18 @@ function scripts() {
         .pipe(webpackstream(webpackconfig, webpack))
         // folder only, filename is specified in webpack config
         .pipe(gulp.dest(paths.scripts.dest))
-        .pipe(server.stream())
+        //.pipe(server.stream())
     );
 }
 
 function watch() {
-    gulp.watch('./website/assets/js/**/*.js', scripts);
-    gulp.watch(paths.images.src, images);
-    gulp.watch('./website/assets/scss/**/*.scss', styles);
+    gulp.watch('./website/assets/js/**/*.js', gulp.series(scripts,reload));
+    gulp.watch(paths.images.src, gulp.series(images, reload));
+    gulp.watch('./website/assets/scss/**/*.scss',  gulp.series(styles, reload));
     gulp.watch(paths.html.src, reload);
 }
 
-var watch = gulp.parallel(watch, serve);
+var watch = gulp.series(serve, watch);
 
 var build = gulp.series(clean, gulp.series(styles, scripts, html, fonts, gulp.parallel(images, serializefiles)));
 

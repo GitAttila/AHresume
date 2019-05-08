@@ -11,7 +11,7 @@ var siteScene = {};
 $('#menuContent a[data-filter]').each(function(){
     let sectionName = $(this).data('filter').trim().toLowerCase();
     let sectionDuration = $('.section-' + sectionName).innerHeight();
-
+    if (sectionName === 'hero') {sectionDuration = sectionDuration - 100}
     siteScene[sectionName] = new ScrollMagic.Scene({
         triggerElement: ".section-" + sectionName,
         triggerHook: "onCenter",
@@ -70,8 +70,22 @@ const blendInAvatar = new ScrollMagic.Scene({
         triggerHook: 0.5, 
         offset: 50
     })
-    .setTween(".section-hero__avatar", 0.5 , {scale: "2",opacity: "0", ease: Linear.easeNone})
+    .setTween(".section-hero__avatar", 0.5 , {scale: "2",opacity: "0", ease: Back.easeOut})
     .addIndicators({
         name: "reveal NavBar"
     }) 
     .addTo(controller);
+
+let langBarsPresets = ['100%','90%','90%','60%'];
+$('.progress__status').each(function(index, key){
+    new ScrollMagic.Scene({
+        triggerElement: ".section-skills",
+        triggerHook: 0.95,
+        offset: -150
+    })
+    .setTween(this, 0.3,{width: langBarsPresets[index], ease: Back.easeOut, delay: 0.2*index})
+    .addIndicators({
+        name: "lang skills"
+    }) 
+    .addTo(controller);
+});
