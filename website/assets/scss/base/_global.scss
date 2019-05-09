@@ -73,6 +73,16 @@ input {
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
     }
+    &--mediumgreydarkgrey {
+        background: linear-gradient(to bottom, $AH-darkgrey, $AH-mediumgrey);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    &--lightgreymediumgrey {
+        background: linear-gradient(to bottom, $AH-mediumgrey, $AH-lightgrey);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
 }
 
 .shadow-depth1 {
