@@ -36,6 +36,14 @@
                     display: inline-block;
                 }
             }
+            a{
+                color: $color-white;
+                text-decoration: none;
+                transition: 0.2s color ease-in-out;
+                &:hover, &:focus {
+                    color: $highlight-text-color;
+                }
+            }
         }
     }
 }
