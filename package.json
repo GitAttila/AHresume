@@ -44,6 +44,8 @@
         "@fortawesome/fontawesome-free": "^5.8.1",
         "animatewithsassclass": "^3.2.1",
         "gsap": "^2.1.2",
+        "imagesloaded": "^4.1.4",
+        "isotope-layout": "^3.0.6",
         "jquery": "^3.4.1",
         "scrollmagic": "^2.0.6"
     }

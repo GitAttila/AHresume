@@ -8,6 +8,8 @@
       <meta name="description" content="Online resume of Attila Hazay - the front-end developer and UX designer.">
       <meta name="author" content="">
       <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="robots" content="noindex, nofollow">
+      <meta name="googlebot" content="noindex">
       <link rel="icon" href="AH_favicon.ico">
 
       <!-- build:css ./assets/styles/sitestyles.css -->
@@ -395,6 +397,45 @@
       <section class="section section-projects">
             <div class="container">
                   <h2 class = "section__title text-gradient--lightgreymediumgrey">projects</h2>
+                  <div class="filter-wrapper" id="project-filter">
+                        <div class="btn-site btn-site--rounded btn-site--text-bold">
+                              <span class="btn-site__label">all</span>
+                        </div>
+                        <div class="btn-site btn-site--rounded btn-site--text-bold">
+                              <span class="btn-site__label">UX design</span>
+                        </div>
+                        <div class="btn-site btn-site--rounded btn-site--text-bold">
+                              <span class="btn-site__label">web development</span>
+                        </div>
+                        <div class="btn-site btn-site--rounded btn-site--text-bold">
+                              <span class="btn-site__label">graphics design</span>
+                        </div>
+                  </div>
+                  <!-- isotope grid  START -->
+                  <div class="grid-layout" id="projectsGrid">
+                        <div class="grid-layout--sizer"></div>
+                        <div data-menu="graphics design" class="grid-layout__item">
+                              <div class="project-card shadow-depth1">
+                                    <h3 class="project-card__title">Dilli6</h3>
+                                    <h4 class="project-card__subtitle">indian bistro & bar</h4>
+                                    <img class="project-card__image" src="./assets/images/portfolios/dilli6/AH_project_dilli6_01.jpg" alt="">
+                              </div>
+                        </div>
+                        <div data-menu="graphics design" class="grid-layout__item">
+                              <div class="project-card shadow-depth1">
+                                    <h3 class="project-card__title">Rockwell Automation</h3>
+                                    <h4 class="project-card__subtitle">Calendar 2019</h4>
+                                    <img class="project-card__image" src="./assets/images/portfolios/RA_calendar/AH_project_RA_calendar_01.jpg" alt="">
+                              </div>
+                        </div>
+                        <div data-menu="graphics design" class="grid-layout__item">
+                              <div class="project-card shadow-depth1">
+                                    <h3 class="project-card__title">SPARS</h3>
+                                    <h4 class="project-card__subtitle">A fashion consmetics brand</h4>
+                                    <img class="project-card__image" src="./assets/images/portfolios/spars/AH_project_spars_01.jpg" alt="">
+                              </div>
+                        </div>
+                  </div>
             </div>
       </section>
 
