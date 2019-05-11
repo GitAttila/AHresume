@@ -1,7 +1,7 @@
 .btn-site {
     position: relative;
     z-index: 2;
-    @include bgImageGradient($AH-darkgrey, $AH-darkergrey);
+    @include bgImageGradient($AH-mediumgrey, $AH-darkgrey);
     color: $color-white;
     text-decoration: none;
     font-family: $logo-font;
@@ -26,7 +26,6 @@
         transition: opacity 0.25s ease-in-out;
         opacity: 0;
     }
-
     &--active {
         &::after {
             opacity: 1;
@@ -35,6 +34,11 @@
         &:focus {
             &::after {
                 opacity: 1;
+            }
+        }
+        &.btn-site--disabled {
+            &::after {
+                opacity: 0;
             }
         }
     }
@@ -72,11 +76,11 @@
 
     &--disabled {
         opacity: 0.34;
-
+        cursor: not-allowed;
         &:hover {
-            background-color: $highlight-background-color;
-            color: $secondary-text-color;
-            border-color: $highlight-background-color;
+            &::after {
+                opacity: 0;
+            }
         }
     }
 

@@ -397,42 +397,129 @@
       <section class="section section-projects">
             <div class="container">
                   <h2 class = "section__title text-gradient--lightgreymediumgrey">projects</h2>
-                  <div class="filter-wrapper" id="project-filter">
-                        <div class="btn-site btn-site--rounded btn-site--text-bold">
+                  <div class="filter__wrapper" id="project-filter">
+                        <div data-filter="all" class="filter__item btn-site btn-site--active btn-site--rounded btn-site--text-bold">
                               <span class="btn-site__label">all</span>
                         </div>
-                        <div class="btn-site btn-site--rounded btn-site--text-bold">
-                              <span class="btn-site__label">UX design</span>
+                        <div data-filter="angular development"  class="filter__item btn-site btn-site--rounded btn-site--text-bold">
+                              <span class="btn-site__label">angular development</span>
                         </div>
-                        <div class="btn-site btn-site--rounded btn-site--text-bold">
+                        <div data-filter="web development"  class="filter__item btn-site btn-site--rounded btn-site--text-bold">
                               <span class="btn-site__label">web development</span>
                         </div>
-                        <div class="btn-site btn-site--rounded btn-site--text-bold">
+                        <div data-filter="graphics design"  class="filter__item btn-site btn-site--rounded btn-site--text-bold">
                               <span class="btn-site__label">graphics design</span>
+                        </div>
+                        <div data-filter="UX design "  class="filter__item btn-site btn-site--rounded btn-site--text-bold">
+                              <span class="btn-site__label">UX design</span>
                         </div>
                   </div>
                   <!-- isotope grid  START -->
                   <div class="grid-layout" id="projectsGrid">
                         <div class="grid-layout--sizer"></div>
-                        <div data-menu="graphics design" class="grid-layout__item">
-                              <div class="project-card shadow-depth1">
-                                    <h3 class="project-card__title">Dilli6</h3>
-                                    <h4 class="project-card__subtitle">indian bistro & bar</h4>
-                                    <img class="project-card__image" src="./assets/images/portfolios/dilli6/AH_project_dilli6_01.jpg" alt="">
+                        <div data-category="all, graphics design" class="grid-layout__item">
+                              <div class="project-card shadow-depth2">
+                                    <div class="project-card__caption justify-content-center align-items-center">
+                                          <div class="project-card__logo">
+                                                <img class="project-card__logo filter-shadow1" src="./assets/images/portfolios/d6_logo_white.png" alt="">
+                                          </div>
+                                          <hr class="box-shadow1">
+                                          <p class="project-card__title text-shadow1">Branding proposal</p>
+                                    </div>
+                                    <div class="project-card__image">
+                                          <img src="./assets/images/portfolios/dilli6/AH_project_dilli6_01.jpg" alt="">
+                                    </div>
+                                    <div class="project-card__overlay gradient--yelloworange"></div>
                               </div>
                         </div>
-                        <div data-menu="graphics design" class="grid-layout__item">
-                              <div class="project-card shadow-depth1">
-                                    <h3 class="project-card__title">Rockwell Automation</h3>
-                                    <h4 class="project-card__subtitle">Calendar 2019</h4>
-                                    <img class="project-card__image" src="./assets/images/portfolios/RA_calendar/AH_project_RA_calendar_01.jpg" alt="">
+                        <div data-category="all, graphics design" class="grid-layout__item">
+                              <div class="project-card shadow-depth2">
+                                    <div class="project-card__caption justify-content-center align-items-center">
+                                          <div class="project-card__logo">
+                                                <img class="project-card__logo filter-shadow1" src="./assets/images/portfolios/RA_logo_bug_white.svg" alt="">
+                                          </div>
+                                          <hr class="box-shadow1">
+                                          <p class="project-card__title text-shadow1">Rockwell Automation's calendar 2019</p>
+                                    </div>
+                                    <div class="project-card__image">
+                                          <img src="./assets/images/portfolios/RA_calendar/AH_project_RA_calendar_01.jpg" alt="">
+                                    </div>
+                                    <div class="project-card__overlay gradient--yelloworange"></div>
                               </div>
                         </div>
-                        <div data-menu="graphics design" class="grid-layout__item">
-                              <div class="project-card shadow-depth1">
-                                    <h3 class="project-card__title">SPARS</h3>
-                                    <h4 class="project-card__subtitle">A fashion consmetics brand</h4>
-                                    <img class="project-card__image" src="./assets/images/portfolios/spars/AH_project_spars_01.jpg" alt="">
+                        <div data-category="all, graphics design" class="grid-layout__item">
+                              <div class="project-card shadow-depth2">
+                                    <div class="project-card__caption justify-content-center align-items-center">
+                                          <div class="project-card__logo">
+                                                <img class="project-card__logo filter-shadow1" src="./assets/images/portfolios/spars_logo_white.png" alt="">
+                                          </div>
+                                          <hr class="box-shadow1">
+                                          <p class="project-card__title text-shadow1">Fashion cosmetics brand</p>
+                                    </div>
+                                    <div class="project-card__image">
+                                          <img src="./assets/images/portfolios/spars/AH_project_spars_01.jpg" alt="">
+                                    </div>
+                                    <div class="project-card__overlay gradient--yelloworange"></div>
+                              </div>
+                        </div>
+                        <div data-category="all, angular development, UX design" class="grid-layout__item">
+                              <div class="project-card shadow-depth2">
+                                    <div class="project-card__caption justify-content-center align-items-center">
+                                          <div class="project-card__logo">
+                                                <img class="project-card__logo filter-shadow1" src="./assets/images/portfolios/RA_logo_bug_white.svg" alt="">
+                                          </div>
+                                          <hr class="box-shadow1">
+                                          <p class="project-card__title text-shadow1">Rockwell Automation's Cloud login page</p>
+                                    </div>
+                                    <div class="project-card__image">
+                                          <img src="./assets/images/portfolios/RA_loginpage/AH_project_RA_project_01.png" alt="">
+                                    </div>
+                                    <div class="project-card__overlay gradient--yelloworange"></div>
+                              </div>
+                        </div>
+                        <div data-category="all, web development" class="grid-layout__item">
+                              <div class="project-card shadow-depth2">
+                                    <div class="project-card__caption justify-content-center align-items-center">
+                                          <div class="project-card__logo">
+                                                <img class="project-card__logo filter-shadow1" src="./assets/images/portfolios/IE_logo_white.png" alt="">
+                                          </div>
+                                          <hr class="box-shadow1">
+                                          <p class="project-card__title text-shadow1">Stoneworks by Ivan Erben</p>
+                                    </div>
+                                    <div class="project-card__image">
+                                          <img src="./assets/images/portfolios/kamenictviIE/AH_project_IE_01.jpg" alt="">
+                                    </div>
+                                    <div class="project-card__overlay gradient--yelloworange"></div>
+                              </div>
+                        </div>
+                        <div data-category="all, angular development, UX design" class="grid-layout__item">
+                              <div class="project-card shadow-depth2">
+                                    <div class="project-card__caption justify-content-center align-items-center">
+                                          <div class="project-card__logo">
+                                                <img class="project-card__logo filter-shadow1" src="./assets/images/portfolios/RA_logo_bug_white.svg" alt="">
+                                          </div>
+                                          <hr class="box-shadow1">
+                                          <p class="project-card__title text-shadow1">Rockwell Automation's Device Management</p>
+                                    </div>
+                                    <div class="project-card__image">
+                                          <img src="./assets/images/portfolios/RA_DM/AH_project_RA_DMS_01.png" alt="">
+                                    </div>
+                                    <div class="project-card__overlay gradient--yelloworange"></div>
+                              </div>
+                        </div>
+                        <div data-category="all, web development" class="grid-layout__item">
+                              <div class="project-card shadow-depth2">
+                                    <div class="project-card__caption justify-content-center align-items-center">
+                                          <div class="project-card__logo">
+                                                <img class="project-card__logo filter-shadow1" src="./assets/images/portfolios/KrisErb_logo_white.png" alt="">
+                                          </div>
+                                          <hr class="box-shadow1">
+                                          <p class="project-card__title text-shadow1">Photographer's web site</p>
+                                    </div>
+                                    <div class="project-card__image">
+                                          <img src="./assets/images/portfolios/KE/AH_project_KE_01.jpg" alt="">
+                                    </div>
+                                    <div class="project-card__overlay gradient--yelloworange"></div>
                               </div>
                         </div>
                   </div>
@@ -476,8 +563,13 @@
                                     </a>
                               </div>
                               <div class="col-12 col-sm-6 col-md-4 col-lg-1">
-                                    <a href="https://isotope.metafizzy.co" class ="tech-stripe__item-link" target = "_blank">
+                                    <a href="https://isotope.metafizzy.com" class ="tech-stripe__item-link" target = "_blank">
                                           <img class="tech-stripe__item-link__image" src="./assets/images/tech/isotope_white.png" alt="Isotope logo">
+                                    </a>
+                              </div>
+                              <div class="col-12 col-sm-6 col-md-4 col-lg-1">
+                                    <a href="https://greensock.com/" class ="tech-stripe__item-link" target = "_blank">
+                                          <img class="tech-stripe__item-link__image" src="./assets/images/tech/greensock_logo_white.png" alt="GreenSock logo">
                                     </a>
                               </div>
                               <div class="col-12 col-sm-6 col-md-4 col-lg-1">
