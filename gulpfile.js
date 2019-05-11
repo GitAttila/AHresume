@@ -23,6 +23,10 @@ var paths = {
         src: './node_modules/@fortawesome/fontawesome-free/webfonts/**/*',
         dest: './website/temp/webfonts'
     },
+    galleryfonts: {
+        src: './node_modules/lightgallery/dist/fonts/**/*',
+        dest: './website/temp/fonts'
+    },
     styles: {
         src: './website/assets/scss/sitestyles.scss',
         dest: './website/temp/styles'
@@ -35,12 +39,18 @@ var paths = {
         src: './website/assets/images/**/*.{png,jpg,jpeg,svg,gif}',
         dest: './dist/assets/images'
     },
-    html: {
-        src: './website/*.html',
+    robots: {
+        src: './website/robots.txt',
         dest: './dist'
     },
     temp: {
-        src: './website/temp/**/*.*',
+        src: [
+            './website/temp/**/*.*',
+            '!./website/temp/js',
+            '!./website/temp/js/**',
+            '!./website/temp/styles',
+            '!./website/temp/styles/**',
+            ],
         dest: './dist/assets'
     }
 };
@@ -61,13 +71,23 @@ function reload(done) {
     done();
 }
 
+function previewDist(done) {
+	server.init({
+		server: {
+			baseDir: "dist"
+        },
+        notify: false
+    });
+    done();
+}
+
 function clean() {
     return del(['./dist']);
 }
 
-function html() {
-    return gulp.src(paths.html.src)
-        .pipe(gulp.dest(paths.html.dest));
+function robots() {
+    return gulp.src(paths.robots.src)
+        .pipe(gulp.dest(paths.robots.dest));
 }
 
 function tempFiles() {
@@ -82,6 +102,15 @@ function fonts() {
             this.emit('end');
         })
         .pipe(gulp.dest(paths.fonts.dest));
+}
+
+function galleryfonts() {
+    return gulp.src(paths.galleryfonts.src)
+        .on('error', function(errorInfo) {
+            console.log(errorInfo.toString());
+            this.emit('end');
+        })
+        .pipe(gulp.dest(paths.galleryfonts.dest));
 }
 
 function images() {
@@ -153,23 +182,26 @@ function watch() {
     gulp.watch('./website/assets/js/**/*.js', gulp.series(scripts,reload));
     gulp.watch(paths.images.src, gulp.series(images, reload));
     gulp.watch('./website/assets/scss/**/*.scss',  gulp.series(styles, reload));
-    gulp.watch(paths.html.src, reload);
+    gulp.watch('./website/*.html', reload);
 }
 
 var watch = gulp.series(serve, watch);
 
-var build = gulp.series(clean, gulp.series(styles, scripts, html, fonts, gulp.parallel(images, serializefiles)));
+var preview = gulp.series(previewDist);
+
+var build = gulp.series(clean, gulp.series(styles, scripts, robots, fonts, galleryfonts, gulp.parallel(images, tempFiles, serializefiles)));
 
 
 exports.clean = clean;
 exports.styles = styles;
 exports.images = images;
 exports.fonts = fonts;
-exports.html = html;
+exports.robots = robots;
 exports.tempFiles = tempFiles;
 exports.serializefiles = serializefiles;
 exports.scripts = scripts;
 exports.watch = watch;
 exports.build = build;
+exports.preview = preview;
 
 exports.default = build;

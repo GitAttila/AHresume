@@ -1,5 +1,5 @@
-import Isotope from "isotope-layout";
-import "isotope-layout/js/layout-modes/fit-rows";
+import Isotope from 'isotope-layout';
+import 'isotope-layout/js/layout-modes/fit-rows';
 import imagesLoaded from 'imagesloaded';
 
 class Projects {
@@ -30,6 +30,7 @@ class Projects {
                     }
                 });
                 self.events(self.projectsGrid);
+                self.initGalleries();
                 // $('section.section-loading').fadeOut(1000, function(){
 
                     // init filtering to show 'about' grid initially
@@ -104,6 +105,12 @@ class Projects {
         });
     }
 
+    initGalleries() {
+        $(document).ready(function() {
+            $("#dilli6-gallery").lightGallery(); 
+            console.log('gallery dilli6 initialized');
+        });
+    }
 }
 
 export default Projects;

@@ -3,6 +3,7 @@
     background-color: $color-white;
     color: $primary-text-color;
     overflow: hidden;
+    cursor: pointer;
     &__caption {
         position: absolute;
         z-index: 3;
@@ -35,7 +36,7 @@
         height: 100%;;
         opacity: 0.6;
         z-index: 1;
-        transition: 1s opacity ease-in-out;
+        transition: 1s background ease-in-out;
     }
     &__title {
         font-family: $text-font;
@@ -59,11 +60,41 @@
             transition: filter 1s ease-in-out;
             filter: grayscale(1);
         }
-
+        &--hidden {
+            display: none!important;
+        }
+    }
+    &__link, &__gallery {
+        position: absolute;
+        z-index: 4;
+        top: 0;
+        right: 0;
+        width: 3rem;
+        height: 2rem;
+        background: rgba(0,0,0,0.5);
+        transition: 0.2s background ease-in-out;
+        &:hover {
+            background: linear-gradient(to right, $AH-yellow, $AH-orange);
+            text-decoration: none;
+        }
+        i {
+            color: $color-white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+        }
+    }
+    &__gallery {
+        color: $color-white;
+        bottom: 0;
+        top: auto;
     }
     &:hover {
         .project-card__overlay {
-            opacity: 0;
+            // opacity: 0;
+            background: rgba(0,0,0,0.5);
         }
         .project-card__image {
             transform: scale(1);

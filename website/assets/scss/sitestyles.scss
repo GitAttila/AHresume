@@ -11,13 +11,14 @@
 @import "../../../node_modules/@fortawesome/fontawesome-free/scss/brands";
 @import "../../../node_modules/@fortawesome/fontawesome-free/scss/regular";
 @import "../../../node_modules/animatewithsassclass/animate.scss";
-
+@import "../../../node_modules/lightgallery/src/sass/lightgallery.scss";
 /*  site specific scss styles  */
 
 @import "base/variables";
 @import "base/mixins";
 @import "base/global";
 @import "base/typography";
+
 @import "modules/section";
 @import "modules/section-hero";
 @import "modules/site-header";
