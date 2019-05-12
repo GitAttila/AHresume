@@ -43,8 +43,8 @@ var paths = {
         src: './website/assets/images/**/*.{png,jpg,jpeg,svg,gif}',
         dest: './dist/assets/images'
     },
-    robots: {
-        src: './website/robots.txt',
+    rootfiles: {
+        src: './website/*.{txt,png,ico,webmanifest}',
         dest: './dist'
     },
     temp: {
@@ -89,9 +89,9 @@ function clean() {
     return del(['./dist']);
 }
 
-function robots() {
-    return gulp.src(paths.robots.src)
-        .pipe(gulp.dest(paths.robots.dest));
+function rootfiles() {
+    return gulp.src(paths.rootfiles.src)
+        .pipe(gulp.dest(paths.rootfiles.dest));
 }
 
 function tempFiles() {
@@ -202,14 +202,14 @@ var watch = gulp.series(serve, watch);
 
 var preview = gulp.series(previewDist);
 
-var build = gulp.series(clean, gulp.series(styles, scripts, robots, fonts, galleryfonts, lightgalleryimgs, gulp.parallel(images, tempFiles, serializefiles)));
+var build = gulp.series(clean, gulp.series(styles, scripts, rootfiles, fonts, galleryfonts, lightgalleryimgs, gulp.parallel(images, tempFiles, serializefiles)));
 
 
 exports.clean = clean;
 exports.styles = styles;
 exports.images = images;
 exports.fonts = fonts;
-exports.robots = robots;
+exports.rootfiles = rootfiles;
 exports.tempFiles = tempFiles;
 exports.serializefiles = serializefiles;
 exports.scripts = scripts;
