@@ -23,6 +23,10 @@ var paths = {
         src: './node_modules/@fortawesome/fontawesome-free/webfonts/**/*',
         dest: './website/temp/webfonts'
     },
+    lightgalleryimgs: {
+        src: './node_modules/lightgallery/dist/img/**/*',
+        dest: './website/temp/img'
+    },
     galleryfonts: {
         src: './node_modules/lightgallery/dist/fonts/**/*',
         dest: './website/temp/fonts'
@@ -113,6 +117,15 @@ function galleryfonts() {
         .pipe(gulp.dest(paths.galleryfonts.dest));
 }
 
+function lightgalleryimgs() {
+    return gulp.src(paths.lightgalleryimgs.src)
+        .on('error', function(errorInfo) {
+            console.log(errorInfo.toString());
+            this.emit('end');
+        })
+        .pipe(gulp.dest(paths.lightgalleryimgs.dest));
+}
+
 function images() {
     return gulp.src([paths.images.src])
         .pipe(imagemin(
@@ -189,7 +202,7 @@ var watch = gulp.series(serve, watch);
 
 var preview = gulp.series(previewDist);
 
-var build = gulp.series(clean, gulp.series(styles, scripts, robots, fonts, galleryfonts, gulp.parallel(images, tempFiles, serializefiles)));
+var build = gulp.series(clean, gulp.series(styles, scripts, robots, fonts, galleryfonts, lightgalleryimgs, gulp.parallel(images, tempFiles, serializefiles)));
 
 
 exports.clean = clean;

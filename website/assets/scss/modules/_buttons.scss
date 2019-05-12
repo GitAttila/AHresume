@@ -9,6 +9,7 @@
     padding: 0.5rem 1rem;
     display: inline-block;
     text-align: center;
+    text-decoration: none;
     cursor: pointer;
     &__label {
         position: relative;
@@ -44,6 +45,7 @@
     }
 
     &:hover {
+        text-decoration: none;
         &::after {
             opacity: 1;
         }

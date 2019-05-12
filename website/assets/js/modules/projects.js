@@ -1,22 +1,24 @@
 import Isotope from 'isotope-layout';
 import 'isotope-layout/js/layout-modes/fit-rows';
 import imagesLoaded from 'imagesloaded';
-
+import Animations from './smsetup';
 class Projects {
 
     constructor() {
         this.projectsGridEl = $('#projectsGrid');
+        this.galleriesKeys = ['dilli6', 'RA-calendar', 'spars', 'RA-loginpage', 'RA-merchendise', 'kamenictvi', 'RA-dm', 'KE', 'PF', 'bwmagazine', 'photoshoots' ];
         this.projectsGrid;
         this.initProjectsGrid();
         this.updateProjectsGrid = function() {
             this.projectsGrid.layout();
         };
+        this.anims = new Animations();
     }
 
     initProjectsGrid() {
         let self = this;
         var imgLoaded = imagesLoaded('body', { background: true }, function () {
-            console.log('images have loaded...');
+            console.log('all images have loaded...');
         });
         imgLoaded.on( 'always', function( instance ) {
             setTimeout(()=>{
@@ -31,11 +33,11 @@ class Projects {
                 });
                 self.events(self.projectsGrid);
                 self.initGalleries();
-                // $('section.section-loading').fadeOut(1000, function(){
+                // initialize animations here
+                self.anims.events();
 
-                    // init filtering to show 'about' grid initially
-                    // this.navigation.navGrid.arrange({ filter: '[data-menu*="about"]' });
-                // });
+                $('section.section-loading').fadeOut(1000, function(){});
+
             },1000);
         });
         imgLoaded.on( 'fail', function( instance ) {
@@ -45,7 +47,7 @@ class Projects {
         });
         imgLoaded.on( 'progress', function( instance, image ) {
             if (image.isLoaded) {
-                // $('#loading-spinner .progress__status').width(instance.progressedCount / instance.images.length * 100 + '%');
+                $('#loading-spinner .progress__status').width(instance.progressedCount / instance.images.length * 100 + '%');
             } else {
                 brokenCount++;
             }
@@ -105,10 +107,16 @@ class Projects {
         });
     }
 
+    
     initGalleries() {
+        var self = this;
         $(document).ready(function() {
-            $("#dilli6-gallery").lightGallery(); 
-            console.log('gallery dilli6 initialized');
+            $.each(self.galleriesKeys, function(key, val) {
+                let galKey = val.trim().toLowerCase();
+                let idSelector = "#" + galKey + "-gallery";
+                $(idSelector).lightGallery(); 
+            });
+            console.log('galleries initialized');
         });
     }
 }
