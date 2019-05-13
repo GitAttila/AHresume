@@ -85,7 +85,7 @@ class Animations {
             new ScrollMagic.Scene({
                 triggerElement: ".section-skills",
                 triggerHook: 0.5,
-                offset: -250
+                offset: -400
             })
             .setTween(this, 0.3,{width: langBarsPresets[index], ease: Back.easeOut, delay: 0.2*index})
             // .addIndicators({

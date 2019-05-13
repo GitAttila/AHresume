@@ -6,7 +6,7 @@ class Projects {
 
     constructor() {
         this.projectsGridEl = $('#projectsGrid');
-        this.galleriesKeys = ['dilli6', 'RA-calendar', 'spars', 'RA-loginpage', 'RA-merchendise', 'kamenictvi', 'RA-dm', 'KE', 'PF', 'bwmagazine', 'photoshoots' ];
+        this.galleriesKeys = ['dilli6', 'RA-calendar', 'spars', 'RA-loginpage', 'RA-merchendise', 'kamenictvi', 'RA-dm', 'KE', 'PF', 'bwmagazine', 'photoshoots', 'ra-manage', 'ftc' ];
         this.projectsGrid;
         this.initProjectsGrid();
         this.updateProjectsGrid = function() {
@@ -16,6 +16,7 @@ class Projects {
     }
 
     initProjectsGrid() {
+        let brokenCount = 0;
         let self = this;
         var imgLoaded = imagesLoaded('body', { background: true }, function () {
             console.log('all images have loaded...');
