@@ -105,6 +105,11 @@ class Projects {
             });
 
         });
+
+        $('#projectsGrid .project-card').on('click', function(){
+            $(this).children().children('.project-card__gallery').animateCss('bounceIn');
+        });
+
     }
 
     
