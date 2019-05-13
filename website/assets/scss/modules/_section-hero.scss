@@ -56,8 +56,8 @@
     &__title {
         font-family: $logo-font;
         color: $color-white;
-        font-size: 1.8rem;
-        line-height: 2rem;
+        font-size: 1.5rem;
+        line-height: 1.7rem;
         text-align: center;
         @include atSmall {
             font-size: 2.4rem;
