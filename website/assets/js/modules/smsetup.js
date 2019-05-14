@@ -175,6 +175,17 @@ class Animations {
         // }) 
         .addTo(_self.controller);
 
+        let staggerAwards = TweenMax.staggerTo(".award-animation", 1, {transform: "translateY(0)", opacity: 1, ease: Back.easeOut}, 0.2);
+        new ScrollMagic.Scene({
+            triggerElement: ".section-awards",
+            triggerHook: 0.66,
+        })
+        .setTween(staggerAwards)
+        // .addIndicators({
+        //     name: "award-animation"
+        // }) 
+        .addTo(_self.controller);
+
         var resizeTimer;
         $( window ).on('resize', function() {
             clearTimeout(resizeTimer);
