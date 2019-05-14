@@ -163,6 +163,35 @@ class Animations {
             // }) 
             .addTo(_self.controller);
         });
+
+        let staggerTech = TweenMax.staggerTo(".tech-animation", 0.3, {transform: "scale(1)", ease: Back.easeOut}, 0.2);
+        new ScrollMagic.Scene({
+            triggerElement: ".section-tech",
+            triggerHook: 0.66,
+        })
+        .setTween(staggerTech)
+        // .addIndicators({
+        //     name: "tech-animation"
+        // }) 
+        .addTo(_self.controller);
+
+        var resizeTimer;
+        $( window ).on('resize', function() {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(function(){
+                resetSceneDurations();
+            },250);
+        });
+
+    function resetSceneDurations(){
+        // homeScene.duration(($("#landing-section")[0].offsetHeight));
+        // aboutScene.duration(($("#about")[0].offsetHeight));
+        // downloadsScene.duration(($("#downloads")[0].offsetHeight));
+        // requestScene.duration(($("#request-deployment")[0].offsetHeight));
+        // teamScene.duration(($("#contact")[0].offsetHeight + $("#team")[0].offsetHeight));
+        // thumbsUp.duration($("#team")[0].offsetHeight-$("#thumbs-up-wrapper").height());
+    }
+
     }
 }
 
