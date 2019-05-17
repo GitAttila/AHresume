@@ -5,7 +5,7 @@ var path = require('path');
 module.exports = {
     entry: {
         Vendor: "./website/assets/js/vendor.js",
-        App: ["@babel/polyfill", "./website/assets/js/app.js"]
+        App: ["@babel/polyfill/dist/polyfill.js", "./website/assets/js/app.js"]
     },
     mode: 'none',
     output: {

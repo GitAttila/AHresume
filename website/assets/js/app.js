@@ -1,5 +1,6 @@
 /*jshint esversion: 6 */
 // global jquery import - must be also provided in the webpack config file
+import "@babel/polyfill";
 import $ from 'jquery';
 import './modules/animatecss';
 import lightGallery from 'lightgallery/dist/js/lightgallery-all';
