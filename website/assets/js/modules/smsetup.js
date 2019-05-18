@@ -194,14 +194,53 @@ class Animations {
             },250);
         });
 
-    function resetSceneDurations(){
-        // homeScene.duration(($("#landing-section")[0].offsetHeight));
-        // aboutScene.duration(($("#about")[0].offsetHeight));
-        // downloadsScene.duration(($("#downloads")[0].offsetHeight));
-        // requestScene.duration(($("#request-deployment")[0].offsetHeight));
-        // teamScene.duration(($("#contact")[0].offsetHeight + $("#team")[0].offsetHeight));
-        // thumbsUp.duration($("#team")[0].offsetHeight-$("#thumbs-up-wrapper").height());
-    }
+        // Attila Hazay signature animation
+        $('#AH-signature-paths path').each(function(key,val){
+            // console.log(key,val);
+            pathPrepare ($(val));
+        });
+
+        var AHsignatureTween = new TimelineMax()
+            .delay(1)
+		    .add(TweenMax.to('path#att', 0.5, {strokeDashoffset: 0, ease:Linear.easeNone})) // draw word for 0.9
+            .add(TweenMax.to('path#iline', 0.25, {strokeDashoffset: 0, ease:Linear.easeNone}))  // draw dot for 0.1
+            .add(TweenMax.to('path#dot', 0.25, {strokeDashoffset: 0, ease:Linear.easeNone}))
+            .add(TweenMax.to('path#la', 0.5, {strokeDashoffset: 0, ease:Linear.easeNone}))
+            .add(TweenMax.to('path#h1line', 0.25, {strokeDashoffset: 0, ease:Linear.easeNone}))
+            .add(TweenMax.to('path#h2line', 0.5, {strokeDashoffset: 0, ease:Linear.easeNone}))
+            .add(TweenMax.to('path#az', 0.5, {strokeDashoffset: 0, ease:Linear.easeNone}))
+            .add(TweenMax.to('path#ay', 0.5, {strokeDashoffset: 0, ease:Linear.easeNone}))
+            .add(TweenMax.to('path', 3.25, {stroke: "#ffffff", ease:Linear.easeNone}), 0);			// change color during the whole thing
+        
+        var AHsignatureScene = new ScrollMagic.Scene(
+                {
+                    triggerElement: ".section-hero", 
+                    tweenChanges: true,
+                    triggerHook: 0
+                }
+            )
+            .setTween(AHsignatureTween)
+            // .addIndicators({
+            //     name: "signature"
+            // }) 
+            .addTo(_self.controller);
+                    
+        function pathPrepare ($el) {
+            var lineLength = $el[0].getTotalLength();
+            $el.css("stroke-dasharray", lineLength);
+            $el.css("stroke-dashoffset", lineLength);
+        }
+
+        function resetSceneDurations(){
+            $(Object.keys(_self.siteScene)).each(function(key,val){
+                let value = val.trim().toLowerCase();
+                let dur = $(".section-" + value )[0].offsetHeight;
+                console.log(value, dur);
+                _self.siteScene[this].duration(dur);
+            });
+            // aboutScene.duration(($("#about")[0].offsetHeight));
+        }
+
 
     }
 }

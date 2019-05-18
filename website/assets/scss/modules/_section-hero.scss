@@ -11,6 +11,15 @@
         .container {
             position: relative;
         }
+        .st0 {
+            clip-path:url(#SVGID_2_);
+            fill:none;
+            stroke: #33629c;
+            stroke-width:17;
+            stroke-linecap:round;
+            stroke-linejoin:round;
+            stroke-miterlimit:10;
+        }
     }
     &__overlay {
         position: absolute;
