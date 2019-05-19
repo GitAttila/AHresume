@@ -40,7 +40,7 @@ var paths = {
         dest: './website/temp/js'
     },
     images: {
-        src: './website/assets/images/**/*.{png,jpg,jpeg,svg,gif}',
+        src: './website/assets/images/**/*.{png,jpg,jpeg,svg,gif,pdf}',
         dest: './dist/assets/images'
     },
     rootfiles: {

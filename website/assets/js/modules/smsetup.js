@@ -235,7 +235,7 @@ class Animations {
             $(Object.keys(_self.siteScene)).each(function(key,val){
                 let value = val.trim().toLowerCase();
                 let dur = $(".section-" + value )[0].offsetHeight;
-                console.log(value, dur);
+                // console.log(value, dur);
                 _self.siteScene[this].duration(dur);
             });
             // aboutScene.duration(($("#about")[0].offsetHeight));

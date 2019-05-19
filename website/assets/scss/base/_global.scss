@@ -39,6 +39,9 @@ input {
     &--yelloworange {
         background: linear-gradient(to right, $AH-yellow, $AH-orange);
     }
+    &--mediumgreydarkgrey {
+        background: linear-gradient(to left, $AH-mediumgrey, $AH-darkgrey);
+    }
     &--darkergreydarkgrey {
         background: linear-gradient(to right, $AH-darkergrey, $AH-darkgrey);
     }
