@@ -1,27 +1,30 @@
-
 var webpack = require('webpack');
 var path = require('path');
 
 module.exports = {
+    mode: 'development',
+    devtool: 'inline-source-map',
     entry: {
-        Vendor: "./website/assets/js/vendor.js",
-        App: ["@babel/polyfill/dist/polyfill.js", "./website/assets/js/app.js"]
+        App: ["./website/assets/js/app.js"]
     },
-    mode: 'none',
     output: {
         path: __dirname + "/website/temp/js",
         filename: "[name].js"
     },
     module: {
-        rules: [{
-            loader: 'babel-loader',
-            options: {
-                presets: ['@babel/preset-env'],
-                plugins: ["@babel/plugin-transform-runtime"]
-            },
-            test: /\.js$/,
-            exclude: /node_modules/
-        }]
+        rules: [
+            {
+                test: /\.js$/,
+                exclude: /node_modules/,
+                use: [{
+                    loader: 'babel-loader',
+                    options: {
+                        presets: ['@babel/preset-env'],
+                        plugins: ["@babel/plugin-transform-runtime"]
+                    }
+                }]
+            }
+        ]
     },
     resolve: {
         alias: {

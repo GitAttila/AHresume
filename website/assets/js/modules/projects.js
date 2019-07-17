@@ -57,7 +57,7 @@ class Projects {
 
     events(grid) {
         let lastNavMenuClicked='all';
-        self = this;
+        let self = this;
         grid = grid || self.projectsGrid;
         $("#project-filter [data-filter]").on('click', function(e){
             let isFilterItemDisabled = $(this).hasClass('btn-site--disabled');
@@ -115,7 +115,6 @@ class Projects {
 
     
     initGalleries() {
-        var self = this;
         $(document).ready(function() {
             $.each(self.galleriesKeys, function(key, val) {
                 let galKey = val.trim().toLowerCase();

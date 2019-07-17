@@ -67,26 +67,39 @@ input {
 
 .text-gradient {
     &--yelloworange {
-        background: linear-gradient(to bottom, $AH-yellow, $AH-orange);
-        -webkit-background-clip: text;
+        color: $AH-yellow;
         -webkit-text-fill-color: transparent;
+        background: -webkit-linear-gradient(to bottom, $AH-yellow, $AH-orange);
+        background: -o-linear-gradient(to bottom, $AH-yellow, $AH-orange);
+        background-clip: text;
+        -webkit-background-clip: text;
     }
     &--darkergreydarkgrey {
-        background: linear-gradient(to bottom, $AH-darkergrey, $AH-darkgrey);
-        -webkit-background-clip: text;
+        color: $AH-darkergrey;
         -webkit-text-fill-color: transparent;
+        background: -webkit-linear-gradient(to bottom, $AH-darkergrey, $AH-darkgrey);
+        background: -o-linear-gradient(to bottom, $AH-darkergrey, $AH-darkgrey);
+        background-clip: text;
+        -webkit-background-clip: text;
     }
     &--mediumgreydarkgrey {
-        background: linear-gradient(to bottom, $AH-darkgrey, $AH-mediumgrey);
-        -webkit-background-clip: text;
+        color: $AH-darkgrey;
         -webkit-text-fill-color: transparent;
+        background: -webkit-linear-gradient(to bottom, $AH-darkgrey, $AH-mediumgrey);
+        background: -o-linear-gradient(to bottom, $AH-darkgrey, $AH-mediumgrey);
+        background-clip: text;
+        -webkit-background-clip: text;
     }
     &--lightgreymediumgrey {
-        background: linear-gradient(to bottom, $AH-mediumgrey, $AH-lightgrey);
-        -webkit-background-clip: text;
+        color: $AH-mediumgrey;
         -webkit-text-fill-color: transparent;
+        background: -webkit-linear-gradient(to bottom, $AH-mediumgrey, $AH-lightgrey);
+        background: -o-linear-gradient(to bottom, $AH-mediumgrey, $AH-lightgrey);
+        background-clip: text;
+        -webkit-background-clip: text;
     }
 }
+
 
 .shadow-depth1 {
     box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
