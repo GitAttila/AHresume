@@ -2,6 +2,7 @@ import Isotope from 'isotope-layout';
 import 'isotope-layout/js/layout-modes/fit-rows';
 import imagesLoaded from 'imagesloaded';
 import Animations from './smsetup';
+import lightGallery from 'lightgallery/dist/js/lightgallery-all';
 class Projects {
 
     constructor() {
@@ -113,13 +114,13 @@ class Projects {
 
     }
 
-    
     initGalleries() {
+        let _self = this;
         $(document).ready(function() {
-            $.each(self.galleriesKeys, function(key, val) {
+            $.each(_self.galleriesKeys, function(key, val) {
                 let galKey = val.trim().toLowerCase();
                 let idSelector = "#" + galKey + "-gallery";
-                $(idSelector).lightGallery(); 
+                $(idSelector).lightGallery();
             });
             console.log('galleries initialized');
         });
