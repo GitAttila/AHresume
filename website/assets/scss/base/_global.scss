@@ -69,32 +69,28 @@ input {
     &--yelloworange {
         color: $AH-yellow;
         -webkit-text-fill-color: transparent;
-        background: -webkit-linear-gradient(to bottom, $AH-yellow, $AH-orange);
-        background: -o-linear-gradient(to bottom, $AH-yellow, $AH-orange);
+        background: -webkit-linear-gradient(bottom, $AH-yellow, $AH-orange);
         background-clip: text;
         -webkit-background-clip: text;
     }
     &--darkergreydarkgrey {
         color: $AH-darkergrey;
         -webkit-text-fill-color: transparent;
-        background: -webkit-linear-gradient(to bottom, $AH-darkergrey, $AH-darkgrey);
-        background: -o-linear-gradient(to bottom, $AH-darkergrey, $AH-darkgrey);
+        background: -webkit-linear-gradient(bottom, $AH-darkergrey, $AH-darkgrey);
         background-clip: text;
         -webkit-background-clip: text;
     }
     &--mediumgreydarkgrey {
         color: $AH-darkgrey;
         -webkit-text-fill-color: transparent;
-        background: -webkit-linear-gradient(to bottom, $AH-darkgrey, $AH-mediumgrey);
-        background: -o-linear-gradient(to bottom, $AH-darkgrey, $AH-mediumgrey);
+        background: -webkit-linear-gradient(bottom, $AH-darkgrey, $AH-mediumgrey);
         background-clip: text;
         -webkit-background-clip: text;
     }
     &--lightgreymediumgrey {
         color: $AH-mediumgrey;
         -webkit-text-fill-color: transparent;
-        background: -webkit-linear-gradient(to bottom, $AH-mediumgrey, $AH-lightgrey);
-        background: -o-linear-gradient(to bottom, $AH-mediumgrey, $AH-lightgrey);
+        background: -webkit-linear-gradient(bottom, $AH-mediumgrey, $AH-lightgrey);
         background-clip: text;
         -webkit-background-clip: text;
     }

@@ -1,0 +1,24 @@
+
+.section-certs {
+    .project-card {
+        &__logo {
+            width: 100%;
+            height: auto;
+            margin-bottom: 1rem;
+            img {
+                width: 67%;
+                height: auto;
+            }
+        }
+        &__title {
+            margin: 0.5rem 0;
+            font-size: 1.9rem;
+            line-height: 2rem;
+        }
+        &__subtitle {
+            margin: 0.5rem 0;
+            font-size: 1.2rem;
+            line-height: 1.3rem;
+        }
+    }
+}

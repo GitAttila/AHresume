@@ -7,8 +7,15 @@ class Projects {
 
     constructor() {
         this.projectsGridEl = $('#projectsGrid');
-        this.galleriesKeys = ['dilli6', 'RA-calendar', 'spars', 'RA-loginpage', 'RA-merchendise', 'kamenictvi', 'RA-dm', 'KE', 'PF', 'bwmagazine', 'photoshoots', 'ra-manage', 'ftc' ];
+        this.certsGridEl = $('#certsGrid');
+        this.galleriesKeys = [
+            'dilli6', 'RA-calendar', 'spars', 
+            'RA-loginpage', 'RA-merchendise', 'kamenictvi', 
+            'RA-dm', 'KE', 'PF', 'bwmagazine', 
+            'photoshoots', 'ra-manage', 'ftc', 
+            'certs-AdobeDim'  ];
         this.projectsGrid;
+        this.certsGrid;
         this.initProjectsGrid();
         this.updateProjectsGrid = function() {
             this.projectsGrid.layout();
@@ -33,7 +40,17 @@ class Projects {
                         gutterWidth: 20
                     }
                 });
-                self.events(self.projectsGrid);
+                self.certsGrid = new Isotope( self.certsGridEl[0], {
+                    percentPosition : true,
+                    itemSelector: '.grid-layout__item',
+                    stagger:100,
+                    masonry: {
+                        columnWidth: '.grid-layout--sizer',
+                        gutterWidth: 20
+                    }
+                });
+                self.events(self.projectsGrid, '#project-filter');
+                self.events(self.certsGrid, '#certs-filter');
                 self.initGalleries();
                 // initialize animations here
                 self.anims.events();
@@ -56,11 +73,11 @@ class Projects {
         });
     }
 
-    events(grid) {
+    events(grid, filterID) {
         let lastNavMenuClicked='all';
         let self = this;
-        grid = grid || self.projectsGrid;
-        $("#project-filter [data-filter]").on('click', function(e){
+        // grid = grid || self.projectsGrid;
+        $(filterID + " [data-filter]").on('click', function(e){
             let isFilterItemDisabled = $(this).hasClass('btn-site--disabled');
             e.preventDefault();
             let filterValue = $(this).data('filter').toLowerCase().trim();
@@ -70,9 +87,9 @@ class Projects {
             console.log(filterValue, lastNavMenuClicked);
             lastNavMenuClicked = filterValue;
 
-            $("#project-filter .filter__item").removeClass("btn-site--active");
+            $(filterID + ' .filter__item').removeClass("btn-site--active");
             $(this).addClass("btn-site--active");
-            $('#project-filter .filter__item').addClass('btn-site--disabled');
+            $(filterID + ' .filter__item').addClass('btn-site--disabled');
 
             // collapse the nav menu on mobile after a menu item has been clicked
             if ($("#menuContent").hasClass('show')) {
@@ -99,7 +116,7 @@ class Projects {
                 $(filteredItems).each(function(key,val){
                     $(val.element).stop().animateCss('pulse', key * delayed, ()=>{
                         if (key === (filteredItems.length-1)) {
-                            $('#project-filter .filter__item').removeClass('btn-site--disabled');
+                            $(filterID + ' .filter__item').removeClass('btn-site--disabled');
                             // console.log('animation completed...');
                         }
                     });
@@ -108,7 +125,10 @@ class Projects {
 
         });
 
-        $('#projectsGrid .project-card').on('click', function(){
+        $(self.projectsGrid).find('.project-card').on('click', function(){
+            $(this).children().children('.project-card__gallery').animateCss('bounceIn');
+        });
+        $(self.certsGrid).find('.project-card').on('click', function(){
             $(this).children().children('.project-card__gallery').animateCss('bounceIn');
         });
 
