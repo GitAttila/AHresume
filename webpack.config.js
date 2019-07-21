@@ -1,15 +1,15 @@
 var webpack = require('webpack');
 var path = require('path');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
-    mode: 'development',
-    devtool: 'inline-source-map',
-    entry: {
-        App: ["./website/assets/js/app.js"]
-    },
+    mode: 'productionn',
+    entry: "./website/assets/js/app.js",
     output: {
         path: __dirname + "/website/temp/js",
-        filename: "[name].js"
+        filename: "App.js",
+        chunkFilename: "shared.js"
     },
     module: {
         rules: [
@@ -37,7 +37,16 @@ module.exports = {
             "debug.addIndicators": path.resolve('node_modules', 'scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators.js')
         },
     },
+    optimization: {
+        splitChunks: {
+            chunks: 'all'
+        },
+        minimizer: [
+            new UglifyJsPlugin()
+        ]
+    },
     plugins: [
+        new CleanWebpackPlugin(),
         new webpack.ProvidePlugin({
             $: 'jquery',
             jQuery: 'jquery'
