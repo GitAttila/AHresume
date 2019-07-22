@@ -88,7 +88,7 @@ input {
         -webkit-background-clip: text;
     }
     &--lightgreymediumgrey {
-        color: $AH-mediumgrey;
+        color: $AH-lightgrey;
         -webkit-text-fill-color: transparent;
         background: -webkit-linear-gradient(bottom, $AH-mediumgrey, $AH-lightgrey);
         background-clip: text;
