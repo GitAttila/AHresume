@@ -4,7 +4,7 @@
     .project-card {
         &__logo {
             width: 100%;
-            height: auto;
+            height: 25%; // IE
             margin-bottom: 1rem;
             img {
                 width: 67%;

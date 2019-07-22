@@ -7,10 +7,12 @@ class Animations {
     constructor() {
         this.controller = new ScrollMagic.Controller();
         this.siteScene = {};
+        this.scrollto = scrollTo; // workaround to keep this plugin in production versionn after webpack  bundlinng
     }
 
     events () {
         let _self = this;
+        console.log(this);
         $('#menuContent a[data-filter]').each(function(){
             let sectionName = $(this).data('filter').trim().toLowerCase();
             let sectionDuration = $('.section-' + sectionName).innerHeight();

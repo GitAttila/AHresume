@@ -143,7 +143,11 @@ class Projects {
             $.each(_self.galleriesKeys, function(key, val) {
                 let galKey = val.trim().toLowerCase();
                 let idSelector = "#" + galKey + "-gallery";
-                $(idSelector).lightGallery();
+                $(idSelector).lightGallery(
+                    {
+                        closable: true
+                    }
+                );
             });
             console.log('galleries initialized');
         });

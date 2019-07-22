@@ -43,6 +43,7 @@
         }
     }
     &__title, &__subtitle  {
+        width: 100%; // IE
         font-family: $text-font;
         font-size: 1.2rem;
         line-height: 1.3rem;
@@ -140,7 +141,7 @@
         }
         .project-card__logo {
             width: 100%;
-            height: auto;
+            height: 30%; // IE
             img {
                 width: 50%;
             }
