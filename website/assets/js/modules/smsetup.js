@@ -12,7 +12,6 @@ class Animations {
 
     events () {
         let _self = this;
-        console.log(this);
         $('#menuContent a[data-filter]').each(function(){
             let sectionName = $(this).data('filter').trim().toLowerCase();
             let sectionDuration = $('.section-' + sectionName).innerHeight();
