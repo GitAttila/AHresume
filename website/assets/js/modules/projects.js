@@ -79,7 +79,6 @@ class Projects {
     events(grid, filterID) {
         let lastNavMenuClicked='all';
         let self = this;
-        // grid = grid || self.projectsGrid;
         $(filterID + " [data-filter]").on('click', function(e){
             let isFilterItemDisabled = $(this).hasClass('btn-site--disabled');
             e.preventDefault();
@@ -87,7 +86,7 @@ class Projects {
             if ((lastNavMenuClicked === filterValue) || isFilterItemDisabled) {
                 return;
             }
-            console.log(filterValue, lastNavMenuClicked);
+            // console.log(filterValue, lastNavMenuClicked);
             lastNavMenuClicked = filterValue;
 
             $(filterID + ' .filter__item').removeClass("btn-site--active");
