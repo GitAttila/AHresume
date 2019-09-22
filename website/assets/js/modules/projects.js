@@ -13,6 +13,7 @@ class Projects {
             'RA-loginpage', 'RA-merchendise', 'kamenictvi', 
             'RA-dm', 'KE', 'PF', 'bwmagazine', 
             'photoshoots', 'ra-manage', 'ftc', 
+            'certs-rxjs', 'certs-meanstack',
             'certs-AdobeDim', 'certs-webpack', 'certs-sketch',
             'certs-asyncjs', 'certs-npm', 'certs-adobexd',
             'certs-cssgrid', 'certs-nodejs', 'certs-git',

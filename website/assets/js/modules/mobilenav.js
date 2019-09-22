@@ -13,20 +13,20 @@ class MobileMenu {
         var self = this;
         $(this.menuContent).on("show.bs.collapse", function(){
             self.toggleTheIcon();
-            self.toggleTheMenu();
+            // self.toggleTheMenu();
         });
         $(this.menuContent).on("shown.bs.collapse", function(){
             $(self.menuContent).children('.primary-nav__items-wrapper').animateCss('pulse');
         });
         $(this.menuContent).on("hide.bs.collapse", function(){
-            self.toggleTheMenu();
+            // self.toggleTheMenu();
             self.toggleTheIcon();
         });
     }
     
-    toggleTheMenu() {
-        // this.menuHeader.toggleClass("site-header--is-expanded");
-    } 
+    // toggleTheMenu() {
+    //     this.menuHeader.toggleClass("site-header--is-expanded");
+    // } 
     toggleTheIcon() {
         this.menuIcon.toggleClass("hamburger__menu-icon--close-x");
     } 

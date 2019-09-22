@@ -16,7 +16,6 @@ class Animations {
             let sectionName = $(this).data('filter').trim().toLowerCase();
             let sectionDuration = $('.section-' + sectionName).innerHeight();
             // console.log(sectionName, sectionDuration);
-            sectionName === 'awards' ? sectionDuration = '100%' : sectionDuration = sectionDuration;
             if (sectionName === 'hero') {sectionDuration = sectionDuration - 100}
             _self.siteScene[sectionName] = new ScrollMagic.Scene({
                 triggerElement: ".section-" + sectionName,
@@ -24,9 +23,9 @@ class Animations {
                 duration: sectionDuration
             })
             .setClassToggle("a[data-filter='" + sectionName + "']","primary-nav__link--active")
-            // .addIndicators({
-            //     name: "section-" + sectionName
-            // })
+                // .addIndicators({
+                //     name: "section-" + sectionName
+                // })
             .addTo(_self.controller);
         });
 
@@ -40,7 +39,9 @@ class Animations {
             if (secElem !== '') {
                 if ($('.section-' + secElem).length>0) {
                     let posElem = $('.section-' + secElem).offset().top;
-                    _self.controller.scrollTo(posElem);
+                    $('html,body').animate({scrollTop: posElem}, 600, 'swing', () => {
+                        $("#menuContent").collapse('hide');
+                    })
                 }
             }
         });
