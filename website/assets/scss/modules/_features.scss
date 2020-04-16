@@ -44,6 +44,13 @@
             font-size: 1.2rem;
             letter-spacing: 0.15rem;
         }
+        &--chip {
+            background-color: $AH-mediumgrey;
+            color: $AH-lightgrey;
+            border-radius: 1rem;
+            padding: 0.1rem 0.6rem;
+            display: inline-block;
+        }
     }
     &__link {
         text-decoration: none;

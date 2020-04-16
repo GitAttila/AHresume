@@ -15,6 +15,7 @@ class Animations {
         $('#menuContent a[data-filter]').each(function(){
             let sectionName = $(this).data('filter').trim().toLowerCase();
             let sectionDuration = $('.section-' + sectionName).innerHeight();
+            // FOR DEBUGGING PURPOSES ONLY:
             // console.log(sectionName, sectionDuration);
             if (sectionName === 'hero') {sectionDuration = sectionDuration - 100}
             _self.siteScene[sectionName] = new ScrollMagic.Scene({
@@ -23,6 +24,7 @@ class Animations {
                 duration: sectionDuration
             })
             .setClassToggle("a[data-filter='" + sectionName + "']","primary-nav__link--active")
+                // FOR DEBUGGING PURPOSES ONLY:
                 // .addIndicators({
                 //     name: "section-" + sectionName
                 // })
@@ -53,6 +55,7 @@ class Animations {
             duration: paralDur
             })
             .setTween(".section-hero",1 , {y: "25%", ease: Linear.easeNone})
+            // FOR DEBUGGING PURPOSES ONLY:
             // .addIndicators({
             //     name: "parallax test"
             // })
@@ -64,6 +67,7 @@ class Animations {
                 offset: 50
             })
             .setClassToggle("#site-header", "layer__opacity-100")
+            // FOR DEBUGGING PURPOSES ONLY:
             // .addIndicators({
             //     name: "reveal NavBar"
             // }) 
@@ -76,6 +80,7 @@ class Animations {
                 offset: 50
             })
             .setTween(".section-hero__avatar", 0.5 , {scale: "2",opacity: "0", ease: Back.easeOut})
+            // FOR DEBUGGING PURPOSES ONLY:
             // .addIndicators({
             //     name: "reveal NavBar"
             // }) 
@@ -89,27 +94,14 @@ class Animations {
                 offset: -400
             })
             .setTween(this, 0.3,{width: langBarsPresets[index], ease: Back.easeOut, delay: 0.2*index})
+            // FOR DEBUGGING PURPOSES ONLY:
             // .addIndicators({
             //     name: "lang skills"
             // }) 
             .addTo(_self.controller);
         });
         
-        let webBarsPresets = ['100%','100%','90%','85%','85%'];
-        $('.feature-web .progress__status').each(function(index){
-            new ScrollMagic.Scene({
-                triggerElement: ".section-skills",
-                triggerHook: 0.5,
-                offset: 200
-            })
-            .setTween(this, 0.3,{width: webBarsPresets[index], ease: Back.easeOut, delay: 0.2*index})
-            // .addIndicators({
-            //     name: "webskills"
-            // }) 
-            .addTo(_self.controller);
-        });
-        
-        let comLangBarsPresets = ['85%','67%','67%'];
+        let comLangBarsPresets = ['90%','75%','75%'];
         $('.feature-languages .progress__status').each(function(index){
             new ScrollMagic.Scene({
                 triggerElement: ".section-skills",
@@ -117,12 +109,43 @@ class Animations {
                 offset: 200
             })
             .setTween(this, 0.3,{width: comLangBarsPresets[index], ease: Back.easeOut, delay: 0.2*index})
+            // FOR DEBUGGING PURPOSES ONLY:
+            // .addIndicators({
+            //     name: "webskills"
+            // }) 
+            .addTo(_self.controller);
+        });
+
+        let webFrameworksPresets = ['80%','90%','75%','67%'];
+        $('.feature-frameworks .progress__status').each(function(index){
+            new ScrollMagic.Scene({
+                triggerElement: ".section-skills",
+                triggerHook: 0.5,
+                offset: 200
+            })
+            .setTween(this, 0.3,{width: webFrameworksPresets[index], ease: Back.easeOut, delay: 0.2*index})
+            // FOR DEBUGGING PURPOSES ONLY:
             // .addIndicators({
             //     name: "webskills"
             // }) 
             .addTo(_self.controller);
         });
         
+        let webTechBarsPresets = ['100%','100%','100%', '90%'];
+        $('.feature-web .progress__status').each(function(index){
+            new ScrollMagic.Scene({
+                triggerElement: ".section-skills",
+                triggerHook: 0.5,
+                offset: 500
+            })
+            .setTween(this, 0.3,{width: webTechBarsPresets[index], ease: Back.easeOut, delay: 0.2*index})
+            // FOR DEBUGGING PURPOSES ONLY:
+            // .addIndicators({
+            //     name: "jsAnimskills"
+            // }) 
+            .addTo(_self.controller);
+        });
+
         let automationBarsPresets = ['90%','90%','85%','80%'];
         $('.feature-automation .progress__status').each(function(index){
             new ScrollMagic.Scene({
@@ -131,22 +154,9 @@ class Animations {
                 offset: 500
             })
             .setTween(this, 0.3,{width: automationBarsPresets[index], ease: Back.easeOut, delay: 0.2*index})
+            // FOR DEBUGGING PURPOSES ONLY:
             // .addIndicators({
             //     name: "automationskills"
-            // }) 
-            .addTo(_self.controller);
-        });
-        
-        let javascriptAnimBarsPresets = ['100%','75%','75%'];
-        $('.feature-jsanim .progress__status').each(function(index){
-            new ScrollMagic.Scene({
-                triggerElement: ".section-skills",
-                triggerHook: 0.5,
-                offset: 500
-            })
-            .setTween(this, 0.3,{width: javascriptAnimBarsPresets[index], ease: Back.easeOut, delay: 0.2*index})
-            // .addIndicators({
-            //     name: "jsAnimskills"
             // }) 
             .addTo(_self.controller);
         });
@@ -159,6 +169,7 @@ class Animations {
                 offset: 700
             })
             .setTween(this, 0.3,{width: designBarsPresets[index], ease: Back.easeOut, delay: 0.2*index})
+            // FOR DEBUGGING PURPOSES ONLY:
             // .addIndicators({
             //     name: "designSkills"
             // }) 
@@ -171,6 +182,7 @@ class Animations {
             triggerHook: 0.66,
         })
         .setTween(staggerTech)
+        // FOR DEBUGGING PURPOSES ONLY:
         // .addIndicators({
         //     name: "tech-animation"
         // }) 
@@ -182,6 +194,7 @@ class Animations {
             triggerHook: 0.66,
         })
         .setTween(staggerAwards)
+        // FOR DEBUGGING PURPOSES ONLY:
         // .addIndicators({
         //     name: "award-animation"
         // }) 
@@ -197,7 +210,6 @@ class Animations {
 
         // Attila Hazay signature animation
         $('#AH-signature-paths path').each(function(key,val){
-            // console.log(key,val);
             pathPrepare ($(val));
         });
 
@@ -221,6 +233,7 @@ class Animations {
                 }
             )
             .setTween(AHsignatureTween)
+            // FOR DEBUGGING PURPOSES ONLY:
             // .addIndicators({
             //     name: "signature"
             // }) 

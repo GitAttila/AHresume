@@ -12,7 +12,7 @@ class Projects {
             'dilli6', 'dilli6-web', 'RA-calendar', 'spars', 
             'RA-loginpage', 'RA-merchendise', 'kamenictvi', 
             'RA-dm','ra-displays', 'KE', 'PF', 'bwmagazine', 
-            'photoshoots', 'ra-manage', 'ftc', 
+            'photoshoots', 'ra-manage', 'ftc', 'mdt-holter',
             'certs-rxjs', 'certs-meanstack',
             'certs-AdobeDim', 'certs-webpack', 'certs-sketch',
             'certs-asyncjs', 'certs-npm', 'certs-adobexd',
