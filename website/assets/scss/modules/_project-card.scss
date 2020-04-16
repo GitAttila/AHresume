@@ -27,6 +27,11 @@
             margin: 0 auto;
             display: block;
         }
+        &--mdt {
+            img {
+                max-height: 50px;
+            }
+        }
     }
     &__overlay {
         position: absolute;
