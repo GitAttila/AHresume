@@ -105,7 +105,7 @@ class Animations {
         $('.feature-languages .progress__status').each(function(index){
             new ScrollMagic.Scene({
                 triggerElement: ".section-skills",
-                triggerHook: 0.5,
+                triggerHook: 0.67,
                 offset: 200
             })
             .setTween(this, 0.3,{width: comLangBarsPresets[index], ease: Back.easeOut, delay: 0.2*index})
@@ -120,7 +120,7 @@ class Animations {
         $('.feature-frameworks .progress__status').each(function(index){
             new ScrollMagic.Scene({
                 triggerElement: ".section-skills",
-                triggerHook: 0.5,
+                triggerHook: 0.67,
                 offset: 200
             })
             .setTween(this, 0.3,{width: webFrameworksPresets[index], ease: Back.easeOut, delay: 0.2*index})
@@ -135,7 +135,7 @@ class Animations {
         $('.feature-web .progress__status').each(function(index){
             new ScrollMagic.Scene({
                 triggerElement: ".section-skills",
-                triggerHook: 0.5,
+                triggerHook: 0.67,
                 offset: 500
             })
             .setTween(this, 0.3,{width: webTechBarsPresets[index], ease: Back.easeOut, delay: 0.2*index})
@@ -150,7 +150,7 @@ class Animations {
         $('.feature-automation .progress__status').each(function(index){
             new ScrollMagic.Scene({
                 triggerElement: ".section-skills",
-                triggerHook: 0.5,
+                triggerHook: 0.67,
                 offset: 500
             })
             .setTween(this, 0.3,{width: automationBarsPresets[index], ease: Back.easeOut, delay: 0.2*index})
@@ -165,7 +165,7 @@ class Animations {
         $('.feature-design .progress__status').each(function(index){
             new ScrollMagic.Scene({
                 triggerElement: ".section-skills",
-                triggerHook: 0.5,
+                triggerHook: 0.67,
                 offset: 700
             })
             .setTween(this, 0.3,{width: designBarsPresets[index], ease: Back.easeOut, delay: 0.2*index})
