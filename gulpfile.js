@@ -1,7 +1,7 @@
 var gulp = require('gulp');
 var autoprefixer = require("gulp-autoprefixer");
 var sourcemaps = require("gulp-sourcemaps");
-var sass = require("gulp-sass");
+var sass = require('gulp-sass')(require('sass'));
 var imagemin = require('gulp-imagemin');
 var imageminPngQuant = require('imagemin-pngquant');
 var imageminJpegRecompress = require('imagemin-jpeg-recompress');
@@ -9,14 +9,12 @@ var usemin = require('gulp-usemin');
 var rev = require('gulp-rev');
 var cssnano = require('gulp-cssnano');
 var plumber = require('gulp-plumber');
-// var uglify = require('gulp-uglify');
 var cleanCSS = require('gulp-clean-css');
 var del = require('del');
 var browserSync = require('browser-sync');
 var server = browserSync.create();
 var webpack = require("webpack");
 var webpackconfig = require("./webpack.config.js");
-var webpackstream = require("webpack-stream");
 
 var paths = {
     fonts: {
@@ -131,7 +129,7 @@ function images() {
         .pipe(imagemin(
             [
                 imagemin.gifsicle(),
-                imagemin.jpegtran(),
+                imagemin.mozjpeg(),
                 imagemin.optipng(),
                 imagemin.svgo(),
                 imageminPngQuant(),
@@ -169,8 +167,8 @@ function styles() {
 function serializefiles() {
     return gulp.src("./website/index.html")
         .pipe(usemin({
-            js: [function() { return rev(); } /*, function(){ return uglify();}*/ ],
-            css: [function() { return rev(); }, function() { return cssnano(); }]
+            js: [() => { return rev(); } /*, function(){ return uglify();}*/ ],
+            css: [() => { return rev(); }, function() { return cssnano(); }]
         }))
         .on('error', function(errorInfo) {
             console.log(errorInfo.toString());
@@ -179,16 +177,16 @@ function serializefiles() {
         .pipe(gulp.dest('./dist'));
 }
 
-function scripts() {
-    return (
-        gulp
-        .src([paths.scripts.src])
-        .pipe(plumber())
-        .pipe(webpackstream(webpackconfig, webpack))
-        // folder only, filename is specified in webpack config
-        .pipe(gulp.dest(paths.scripts.dest))
-        //.pipe(server.stream())
-    );
+function scripts(done) {
+    webpack(require('./webpack.config'), function(err, stats){
+		if (err) {
+			console.log(err.toString());
+		}
+		if (stats) {
+			console.log(stats.toString());
+		}
+	});
+    done();
 }
 
 function watch() {

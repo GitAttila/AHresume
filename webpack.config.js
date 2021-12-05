@@ -1,6 +1,5 @@
 var webpack = require('webpack');
 var path = require('path');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
@@ -8,8 +7,8 @@ module.exports = {
     entry: "./website/assets/js/app.js",
     output: {
         path: __dirname + "/website/temp/js",
-        filename: "App.js",
-        chunkFilename: "shared.js"
+        filename: "[name].js",
+        // chunkFilename: "shared.js"
     },
     module: {
         rules: [
@@ -19,13 +18,14 @@ module.exports = {
                 use: [{
                     loader: 'babel-loader',
                     options: {
-                        presets: ['@babel/preset-env'],
-                        plugins: ["@babel/plugin-transform-runtime"]
+                        plugins: ["@babel/plugin-transform-runtime", "transform-node-env-inline"],
+                        presets: [['@babel/preset-env', { "targets": {"esmodules": true}} ]]
                     }
                 }]
             }
         ]
     },
+    devtool: 'source-map',
     resolve: {
         alias: {
             "TweenLite": path.resolve('node_modules', 'gsap/src/uncompressed/TweenLite.js'),
@@ -40,10 +40,7 @@ module.exports = {
     optimization: {
         splitChunks: {
             chunks: 'all'
-        },
-        minimizer: [
-            new UglifyJsPlugin()
-        ]
+        }
     },
     plugins: [
         new CleanWebpackPlugin(),
