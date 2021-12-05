@@ -3,12 +3,25 @@ var path = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
-    mode: 'production',
-    entry: "./website/assets/js/app.js",
+    mode: 'development',
+    entry: {
+        App: ["@babel/polyfill", "./website/assets/js/app.js"]
+    },
     output: {
         path: __dirname + "/website/temp/js",
-        filename: "[name].js",
-        // chunkFilename: "shared.js"
+        filename: "app.js"
+    },
+    devtool: 'source-map',
+    resolve: {
+        alias: {
+            "TweenLite": path.resolve('node_modules', 'gsap/src/uncompressed/TweenLite.js'),
+            "TweenMax": path.resolve('node_modules', 'gsap/src/uncompressed/TweenMax.js'),
+            "TimelineLite": path.resolve('node_modules', 'gsap/src/uncompressed/TimelineLite.js'),
+            "TimelineMax": path.resolve('node_modules', 'gsap/src/uncompressed/TimelineMax.js'),
+            "ScrollMagic": path.resolve('node_modules', 'scrollmagic/scrollmagic/uncompressed/ScrollMagic.js'),
+            "animation.gsap": path.resolve('node_modules', 'scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap.js'),
+            "debug.addIndicators": path.resolve('node_modules', 'scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators.js')
+        },
     },
     module: {
         rules: [
@@ -24,23 +37,6 @@ module.exports = {
                 }]
             }
         ]
-    },
-    devtool: 'source-map',
-    resolve: {
-        alias: {
-            "TweenLite": path.resolve('node_modules', 'gsap/src/uncompressed/TweenLite.js'),
-            "TweenMax": path.resolve('node_modules', 'gsap/src/uncompressed/TweenMax.js'),
-            "TimelineLite": path.resolve('node_modules', 'gsap/src/uncompressed/TimelineLite.js'),
-            "TimelineMax": path.resolve('node_modules', 'gsap/src/uncompressed/TimelineMax.js'),
-            "ScrollMagic": path.resolve('node_modules', 'scrollmagic/scrollmagic/uncompressed/ScrollMagic.js'),
-            "animation.gsap": path.resolve('node_modules', 'scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap.js'),
-            "debug.addIndicators": path.resolve('node_modules', 'scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators.js')
-        },
-    },
-    optimization: {
-        splitChunks: {
-            chunks: 'all'
-        }
     },
     plugins: [
         new CleanWebpackPlugin(),

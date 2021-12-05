@@ -8,13 +8,11 @@ var imageminJpegRecompress = require('imagemin-jpeg-recompress');
 var usemin = require('gulp-usemin');
 var rev = require('gulp-rev');
 var cssnano = require('gulp-cssnano');
-var plumber = require('gulp-plumber');
 var cleanCSS = require('gulp-clean-css');
 var del = require('del');
 var browserSync = require('browser-sync');
 var server = browserSync.create();
 var webpack = require("webpack");
-var webpackconfig = require("./webpack.config.js");
 
 var paths = {
     fonts: {
