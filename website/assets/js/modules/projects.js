@@ -9,7 +9,7 @@ class Projects {
         this.projectsGridEl = $('#projectsGrid');
         this.certsGridEl = $('#certsGrid');
         this.galleriesKeys = [
-            'cc-conception', 'dilli6', 'dilli6-web', 'RA-calendar', 'spars', 
+            'astro-charting', 'cc-conception', 'dilli6', 'dilli6-web', 'RA-calendar', 'spars', 
             'RA-loginpage', 'RA-merchendise', 'kamenictvi', 
             'RA-dm','ra-displays', 'KE', 'PF', 'bwmagazine', 
             'photoshoots', 'ra-manage', 'ftc', 
