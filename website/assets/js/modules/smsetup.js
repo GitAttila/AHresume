@@ -116,7 +116,7 @@ class Animations {
             .addTo(_self.controller);
         });
 
-        let webFrameworksPresets = ['80%','90%','75%','67%'];
+        let webFrameworksPresets = ['80%','90%','75%','67%', '67%'];
         $('.feature-frameworks .progress__status').each(function(index){
             new ScrollMagic.Scene({
                 triggerElement: ".section-skills",
@@ -131,7 +131,7 @@ class Animations {
             .addTo(_self.controller);
         });
         
-        let webTechBarsPresets = ['100%','100%','100%', '90%'];
+        let webTechBarsPresets = ['100%','100%','100%'];
         $('.feature-web .progress__status').each(function(index){
             new ScrollMagic.Scene({
                 triggerElement: ".section-skills",
@@ -161,7 +161,7 @@ class Animations {
             .addTo(_self.controller);
         });
         
-        let designBarsPresets = ['100%','90%','67%', '75%', '85%', '60%'];
+        let designBarsPresets = ['100%','100%','90%','67%', '75%', '85%', '60%'];
         $('.feature-design .progress__status').each(function(index){
             new ScrollMagic.Scene({
                 triggerElement: ".section-skills",
