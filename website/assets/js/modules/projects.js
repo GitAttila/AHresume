@@ -18,7 +18,10 @@ class Projects {
             'certs-AdobeDim', 'certs-webpack', 'certs-sketch',
             'certs-asyncjs', 'certs-npm', 'certs-adobexd',
             'certs-cssgrid', 'certs-nodejs', 'certs-git',
-            'certs-typescript', 'certs-gulp', 'certs-angularmaterial' ];
+            'certs-typescript', 'certs-gulp', 'certs-angularmaterial',
+            'certs-electron', 'certs-ngrx', 'certs-angularunit',
+            'certs-reactive', 'certs-angularanimations', 'certs-canvas',
+            'certs-stencil', 'certs-playwright'];
         this.projectsGrid;
         this.certsGrid;
         this.initProjectsGrid();
